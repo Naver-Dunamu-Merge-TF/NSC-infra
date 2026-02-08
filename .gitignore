@@ -1,0 +1,21 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+tfplan
+tfplan.json
+
+# Large/generated files
+tflint.exe
+tflint.zip
+checkov_full_result.txt
+checkov_result.txt
+plan_output.txt
+analyze_checkov.py
