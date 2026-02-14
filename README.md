@@ -623,7 +623,7 @@ flowchart TB
 └─────────────────────────────────────────────────────┘
 ```
 
-### 4. 트래픽 흐름 분류 (Traffic Flow Categories)
+### 2.4(b) 트래픽 흐름 상세 분류 (Traffic Flow Categories — Detail)
 
 | # | 카테고리 | 방향 | 프로토콜 | 설명 |
 |:---|:---|:---|:---|:---|
@@ -1053,7 +1053,7 @@ flowchart LR
     AppGW -->|"✅ HTTP 8080"| NSG_App --> AKS
     AdminOps -->|"❌ SSH 22 차단\n(deny-ssh-internet p100)"| AKS
     AdminOps -->|"✅ Bastion 터널"| Bastion
-    Bastion -->|"✅ SSH 22\n(allow-ssh-bastion p90\nsource 10.0.1.0/24)"| AKS
+    Bastion -->|"✅ SSH 22\n(allow-ssh-bastion p90\nsource 10.0.1.0/26)"| AKS
     AKS -->|"✅ Private Endpoint"| NSG_Data --> DB
     User -->|"❌ 직접 접근 차단"| DB
 
@@ -1152,7 +1152,7 @@ flowchart LR
 | **Admin (Ops)** | Internet → Bastion → AKS Node | AKS 워커 노드 (SSH) | Admin (Shell 접근) | Azure AD + MFA |
 | **Admin (BackOffice)** | Internet → AppGW → Admin UI → Admin API | Backoffice DB 조회 | Read/Write (관리 범위) | Azure AD + RBAC |
 | **Service (AKS Pod)** | 내부 네트워크 | Key Vault, ACR, SQL DB, Event Hubs | Managed Identity 기반 | Workload Identity Federation |
-| **Databricks** | 내부 네트워크 | Key Vault, ADLS Gen2 | Managed Identity 기반 | Service Principal |
+| **Databricks** | 내부 네트워크 | Key Vault, ADLS Gen2 | Managed Identity | Workload Identity (Unity Catalog) |
 | **CI/CD Pipeline** | GitHub Actions → Azure | ACR (Push), AKS (Deploy) | Contributor (제한) | Service Principal + OIDC |
 
 **핵심 원칙:**
@@ -1181,7 +1181,7 @@ flowchart LR
 | `sql-connection-string` | Azure SQL DB 접속 문자열 | Account, Commerce |
 | `postgresql-connection-string` | Backoffice DB 접속 문자열 | Sync Consumer, Admin API |
 | `eventhubs-connection-string` | Event Hubs Kafka 인증 정보 | 모든 마이크로서비스 |
-| `ledger-api-key` | Confidential Ledger API 키 | Crypto Service |
+| `ledger-client-cert` | Confidential Ledger 클라이언트 인증서 (PEM) | Crypto Service |
 | `acr-login-credential` | Container Registry 인증 (backup) | AKS |
 | `databricks-token` | Databricks Workspace 접근 토큰 | ETL 파이프라인 |
 
@@ -1211,7 +1211,7 @@ flowchart TB
         direction LR
         S1["sql-connection-string"]
         S2["eventhubs-connection-string"]
-        S3["ledger-api-key"]
+        S3["ledger-client-cert"]
         S4["databricks-token"]
     end
 
@@ -1335,7 +1335,7 @@ flowchart LR
     end
 
     %% Data Flow
-    User -->|"1. HTTP Request"| AppGW
+    User -->|"1. HTTPS Request"| AppGW
     AppGW -->|"2. L7 Route"| AccSvc
     AppGW -->|"2. L7 Route"| ComSvc
     AppGW -->|"2. L7 Route"| CrySvc
@@ -1602,7 +1602,7 @@ flowchart LR
     subgraph Actions["알림 채널"]
         AG["Action Group"]
         Email["📧 이메일"]
-        Slack["💬 Teams"]
+        Teams["💬 Teams"]
         SMS["📱 SMS (긴급)"]
     end
 
@@ -1620,7 +1620,7 @@ flowchart LR
     LAW --> KQL
     KQL -->|"조건 충족 시"| AG
     AG --> Email
-    AG --> Slack
+    AG --> Teams
     AG --> SMS
 
     LAW --> AzDash
@@ -1731,7 +1731,7 @@ flowchart LR
 | 5 | **Confidential Ledger** | Certificate / AAD | SGX Enclave (TEE) | PE Only | ✅ Immutable Audit |
 | 6 | **Key Vault** | Managed Identity + RBAC | HSM-backed (AES-256) | PE Only + Purge Protection | ✅ Access Audit |
 | 6 | **Container Registry** | Managed Identity | At-rest Encryption | PE Only + Content Trust | ✅ Registry Events |
-| 7 | **Databricks** | Service Principal | At-rest (DBFS Encryption) | VNet Injection + Secret Scope | ✅ Job/Cluster Logs |
+| 7 | **Databricks** | Managed Identity (Unity Catalog) | At-rest (DBFS Encryption) | VNet Injection + Secret Scope | ✅ Job/Cluster Logs |
 | 7 | **ADLS Gen2** | Managed Identity | SSE (AES-256) + TLS 1.2 | PE Only + ACL + RBAC | ✅ Storage Analytics |
 | 8 | **Azure Firewall** | — (네트워크 장비) | — | FQDN Allowlist + Network Rules | ✅ AzFW App/Net Rule Logs |
 | 9 | **Log Analytics** | Azure AD RBAC | At-rest Encryption | Workspace RBAC | — (자체가 수집대성) |
