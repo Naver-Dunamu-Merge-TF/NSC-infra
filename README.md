@@ -1,5 +1,6 @@
 # 통합 아키텍처 (Total Architecture) 
 # 버전 :
+# Reference : 
 # 수정일 :
 
 > **문서 목적**: `Infrastructure_Architecture.md`의 **물리적 배포 구조**와 `2.1.1 통제 및 분석 레이어 아키텍쳐.md`의 **보안/통제 상세 설계**, 그리고 **백오피스 아키텍처**를 하나로 통합한 마스터 아키텍처입니다.
@@ -994,9 +995,9 @@ flowchart TB
 | Source ↓ \ Dest → | Perimeter | Application | Admin Portal | Messaging | Data | Security | Analytics | Egress | Ops |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Internet** | ✅ 443 | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Perimeter** | — | ✅ 8080 | ✅ 443 | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Perimeter** | — | ✅ 8443 (TLS) | ✅ 443 | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **Application** | ❌ | — | ❌ | ✅ 9093 | ✅ 1433/5432/443 | ✅ 443 | ❌ | ✅ Any | ❌ |
-| **Admin Portal** | ❌ | ✅ 8080 | — | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Admin Portal** | ❌ | ✅ 8443 (TLS) | — | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | **Messaging** | ❌ | ✅ 9093 | ❌ | — | ❌ | ❌ | ✅ 443 | ❌ | ❌ |
 | **Data** | ❌ | ❌ | ❌ | ❌ | — | ❌ | ✅ 443 | ❌ | ❌ |
 | **Security** | ❌ | ❌ | ❌ | ❌ | ❌ | — | ❌ | ❌ | ❌ |
@@ -1008,8 +1009,8 @@ flowchart TB
 
 | 규칙 | Source | Dest | Port | 설명 |
 |:---|:---|:---|:---|:---|
-| Ingress 허용 | Internet | Perimeter | 443 (HTTPS) | 유일한 외부 진입점, WAF 검사 후 통과 |
-| 서비스 라우팅 | Perimeter | Application | 8080 | AppGW → AKS 서비스 포트 |
+| Ingress 허용 | Internet | Perimeter | 443 (HTTPS) | 유일한 애플리케이션 트래픽 진입점 (Application-Plane), Management-Plane은 Bastion PIP 경유 |
+| 서비스 라우팅 | Perimeter | Application | 8443 (HTTPS) | AppGW → AKS 서비스 포트 (End-to-End TLS) |
 | Admin 라우팅 | Perimeter | Admin Portal | 443 | AppGW → Admin UI |
 | Kafka 통신 | Application ↔ Messaging | 양방향 | 9093 (TLS) | Event Hubs Kafka 프로토콜 |
 | DB 접근 | Application | Data | 1433/5432/443 | SQL(1433), PostgreSQL(5432), Ledger(443) |
@@ -1035,7 +1036,7 @@ flowchart LR
 
         subgraph App["Application Subnet"]
             direction TB
-            NSG_App["NSG: allow-http 80\nallow-from-gw 8080"]
+            NSG_App["NSG: allow-https 443\nallow-from-gw 8443"]
             AKS["AKS Pods"]
         end
 
@@ -1050,7 +1051,7 @@ flowchart LR
     end
 
     User -->|"✅ HTTPS 443"| AppGW
-    AppGW -->|"✅ HTTP 8080"| NSG_App --> AKS
+    AppGW -->|"✅ HTTPS 8443"| NSG_App --> AKS
     AdminOps -->|"❌ SSH 22 차단\n(deny-ssh-internet p100)"| AKS
     AdminOps -->|"✅ Bastion 터널"| Bastion
     Bastion -->|"✅ SSH 22\n(allow-ssh-bastion p90\nsource 10.0.1.0/26)"| AKS
@@ -1071,7 +1072,7 @@ flowchart LR
 |:---|:---|:---|:---|:---|:---|
 | **Application** | `route-to-firewall` | `0.0.0.0/0` | Virtual Appliance | Firewall Private IP | 모든 외부 트래픽 Firewall 경유 강제 |
 | **Analytics** | `route-to-firewall` | `0.0.0.0/0` | Virtual Appliance | Firewall Private IP | Databricks 외부 통신 제어 |
-| **Data** | `route-to-firewall` | `0.0.0.0/0` | Virtual Appliance | Firewall Private IP | DB 외부 유출 방지 |
+| **Data** | `route-to-firewall` | `0.0.0.0/0` | Virtual Appliance | Firewall Private IP | DB 외부 유출 방지 (※ PaaS Only — 아웃바운드 트래픽 없음, 방어적 설정) |
 
 > **결과**: UDR이 적용된 서브넷에서 나가는 모든 트래픽은 Azure Firewall을 반드시 거치며, Firewall Allowlist에 등록되지 않은 목적지는 **자동 차단**됩니다.
 
@@ -1276,7 +1277,7 @@ flowchart TB
 | 100 | `allow-azure-auth` | Application Subnet | `login.microsoftonline.com` | HTTPS | Azure AD 인증 |
 | 200 | `allow-acr` | Application Subnet | `*.azurecr.io` | HTTPS | Container Registry 이미지 Pull |
 | 300 | `allow-keyvault` | Application Subnet | `*.vault.azure.net` | HTTPS | Key Vault API 접근 |
-| 400 | `allow-eventhubs` | Application Subnet | `*.servicebus.windows.net` | AMQPS | Event Hubs Kafka 통신 |
+| 400 | `allow-eventhubs` | Application Subnet | `*.servicebus.windows.net` | Kafka (SASL_SSL, 9093) | Event Hubs Kafka 통신 (※ PE 구성 시 dead rule — Defense-in-Depth 용) |
 | 500 | `allow-crypto-api` | Application Subnet *(Crypto Service — Calico 제한)* | `api.upbit.com` | HTTPS | 암호화폐 시세 API (Naver-Dunamu) |
 | 550 | `allow-naver-api` | Application Subnet | `openapi.naver.com` | HTTPS | Naver 오픈 API 연동 |
 | 600 | `allow-databricks` | Analytics Subnet | `*.azuredatabricks.net` | HTTPS | Databricks Control Plane |
