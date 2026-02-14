@@ -189,7 +189,7 @@ flowchart TB
     AdminUI -->|API Call| AdminAPI
 
     %% 3. Admin Ops Access
-    Admin -->|Secure SSH| Bastion
+    Admin -->|"HTTPS 443 (Bastion)"| Bastion
     Bastion -->|Internal Access| AccSvc
     Bastion -->|Internal Access| ComSvc
 
@@ -417,7 +417,7 @@ flowchart TB
     AdminAPI -->|"Query tx_id"| BackofficeDB
 
     %% Ops Path (Bastion)
-    Admin -->|"② Secure SSH"| Bastion
+    Admin -->|"② HTTPS 443 (Bastion)"| Bastion
     Bastion -->|"SSH 터널"| AdminAPI
     Bastion -->|"SSH 터널"| SyncConsumer
 
@@ -489,7 +489,7 @@ flowchart TB
 | `Route to Crypto` | AppGW | Crypto Service | WAF 통과 후 Crypto API로 라우팅 |
 | `Route to Admin` | AppGW | Admin UI | WAF 통과 후 Admin 포털로 라우팅 |
 | `API Call` | Admin UI | Admin API | 관리 대시보드에서 백오피스 API 호출 |
-| `Secure SSH` | Admin | Bastion | 운영자가 서버 접속 시 보안 터널 사용 |
+| `HTTPS 443 (Bastion)` | Admin | Bastion | 운영자가 Bastion PIP(443)으로 접속 후 SSH 터널 사용 |
 | `Private Endpoint` | Service | Database | 인터넷 거치지 않고 내부망으로 DB 접속 |
 | `REST API Append` | Crypto Service | Confidential Ledger | 원장에 기록 추가 (수정/삭제 불가) |
 | `Publish Event` | Service | Event Hubs | 이벤트 발행 (비동기, Fire & Forget) |
@@ -718,7 +718,7 @@ flowchart TB
     AdminUI -->|API Call| AdminAPI
 
     %% Path 3: Ops Access
-    Admin -->|"③ Secure SSH"| Bastion
+    Admin -->|"③ HTTPS 443 (Bastion)"| Bastion
     Bastion -->|Internal Access| AccSvc
     Bastion -->|Internal Access| ComSvc
 
@@ -1152,7 +1152,8 @@ flowchart LR
 | **User (Client)** | Internet → AppGW → Core Services | Account, Commerce, Crypto API | Read/Write (API 범위 내) | Azure AD B2C + OAuth 2.0 |
 | **Admin (Ops)** | Internet → Bastion → AKS Node | AKS 워커 노드 (SSH) | Admin (Shell 접근) | Azure AD + MFA |
 | **Admin (BackOffice)** | Internet → AppGW → Admin UI → Admin API | Backoffice DB 조회 | Read/Write (관리 범위) | Azure AD + RBAC |
-| **Service (AKS Pod)** | 내부 네트워크 | Key Vault, ACR, SQL DB, Event Hubs | Managed Identity 기반 | Workload Identity Federation |
+| **Service (AKS Pod)** | 내부 네트워크 | Key Vault, ACR, SQL DB | Managed Identity 기반 | Workload Identity Federation |
+| **Service (AKS Pod → Event Hubs)** | 내부 네트워크 | Event Hubs (Kafka) | Kafka SASL_SSL | Connection String (Key Vault) |
 | **Databricks** | 내부 네트워크 | Key Vault, ADLS Gen2 | Managed Identity | Workload Identity (Unity Catalog) |
 | **CI/CD Pipeline** | GitHub Actions → Azure | ACR (Push), AKS (Deploy) | Contributor (제한) | Service Principal + OIDC |
 
@@ -1292,7 +1293,7 @@ flowchart TB
 
 **DNAT Rules:**
 
-| 규칙 | 없음 | — | — | — | 외부에서 Firewall을 통한 인바운드 접근 없음 (모든 인바운드는 AppGW 경유) |
+| 규칙 | 없음 | — | — | — | Firewall DNAT 미사용. **애플리케이션 인바운드 = AppGW(443)**, **운영 인바운드 = Bastion PIP(443)** 경유 |
 |:---|:---|:---|:---|:---|:---|
 
 > **감사 로그**: Firewall의 모든 허용/차단 이벤트는 Log Analytics Workspace로 전송되어 KQL 쿼리로 분석 가능합니다.
@@ -1453,7 +1454,7 @@ flowchart TD
 
     subgraph Alert["운영 알림"]
         Monitor["Log Analytics\n+ Alert Rule"]
-        Ops["운영팀 알림\n(이메일 / Slack)"]
+        Ops["운영팀 알림\n(이메일 / Teams)"]
     end
 
     Service -->|"1. Publish"| MainTopic
@@ -1490,7 +1491,7 @@ flowchart TD
 | 최대 재시도 횟수 | 3회 |
 | 재시도 간격 | Exponential Backoff (1s → 2s → 4s) |
 | DLQ 이동 조건 | 3회 초과 실패 또는 메시지 크기 초과 |
-| DLQ 알림 | Log Analytics → Action Group → 이메일/Slack |
+| DLQ 알림 | Log Analytics → Action Group → 이메일/Teams |
 | DLQ 보존 기간 | 7일 (수동 재처리 또는 폐기) |
 
 ---
@@ -1637,12 +1638,12 @@ flowchart LR
 
 | Alert 이름 | 조건 (KQL) | 심각도 | 알림 채널 | 설명 |
 |:---|:---|:---|:---|:---|
-| **High CPU on AKS** | `Perf \| where CounterName == "% Processor Time" \| where CounterValue > 80` | Sev 2 (Warning) | 이메일 + Slack | AKS 노드 CPU 80% 초과 시 |
-| **DLQ Message Detected** | `AzureDiagnostics \| where Category == "DeadLetteredMessages" \| where count_ > 0` | Sev 1 (Error) | 이메일 + Slack + SMS | Dead Letter Queue에 메시지 적재 시 |
-| **Firewall Deny Spike** | `AzureDiagnostics \| where msg_s contains "Deny" \| summarize count() by bin(TimeGenerated, 5m) \| where count_ > 50` | Sev 2 (Warning) | 이메일 + Slack | 5분간 차단 50건 초과 시 (공격 가능성) |
-| **WAF Attack Detected** | `AzureDiagnostics \| where action_s == "Blocked" \| summarize count() by bin(TimeGenerated, 1m) \| where count_ > 10` | Sev 1 (Error) | 이메일 + Slack + SMS | 1분간 WAF 차단 10건 초과 시 |
+| **High CPU on AKS** | `Perf \| where CounterName == "% Processor Time" \| where CounterValue > 80` | Sev 2 (Warning) | 이메일 + Teams | AKS 노드 CPU 80% 초과 시 |
+| **DLQ Message Detected** | `AzureDiagnostics \| where Category == "DeadLetteredMessages" \| where count_ > 0` | Sev 1 (Error) | 이메일 + Teams + SMS | Dead Letter Queue에 메시지 적재 시 |
+| **Firewall Deny Spike** | `AzureDiagnostics \| where msg_s contains "Deny" \| summarize count() by bin(TimeGenerated, 5m) \| where count_ > 50` | Sev 2 (Warning) | 이메일 + Teams | 5분간 차단 50건 초과 시 (공격 가능성) |
+| **WAF Attack Detected** | `AzureDiagnostics \| where action_s == "Blocked" \| summarize count() by bin(TimeGenerated, 1m) \| where count_ > 10` | Sev 1 (Error) | 이메일 + Teams + SMS | 1분간 WAF 차단 10건 초과 시 |
 | **API Latency High** | `requests \| where duration > 2000 \| summarize count() by bin(timestamp, 5m) \| where count_ > 20` | Sev 2 (Warning) | 이메일 | API 응답 2초 초과가 5분간 20건 이상 시 |
-| **DB Connection Failed** | `AzureDiagnostics \| where Category == "SQLSecurityAuditEvents" \| where action_name_s == "FAILED_LOGIN"` | Sev 1 (Error) | 이메일 + Slack | DB 로그인 실패 감지 |
+| **DB Connection Failed** | `AzureDiagnostics \| where Category == "SQLSecurityAuditEvents" \| where action_name_s == "FAILED_LOGIN"` | Sev 1 (Error) | 이메일 + Teams | DB 로그인 실패 감지 |
 
 **SLA 기준 (Service Level Agreement):**
 

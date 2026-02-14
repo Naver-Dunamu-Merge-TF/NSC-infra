@@ -3,7 +3,7 @@
 ---
 
 Review time : 2026-02-15 07:51
-Review tool : GPT-5.2 Pro
+Reviewer : GPT-5.2 Pro
 
 I reviewed the manual end-to-end for cross-consistency between **(a) the declared resources**, **(b) the subnet/topology + traffic flows**, and **(c) the network/security controls (NSG/UDR/Private Endpoint/WAF/Firewall/RBAC)**. 
 
@@ -242,7 +242,7 @@ If you want, I can also produce a “single source of truth” section (one cons
 ---
 
 Review time : 2026-02-15 07:52
-Review tool : Antigravity (Google DeepMind)
+Reviewer : Antigravity (Google DeepMind)
 
 ## GPT-5.2 Pro 리뷰에 대한 Antigravity 검토
 
@@ -372,3 +372,126 @@ Data 서브넷에는 **컴퓨트 리소스가 없습니다** (SQL DB, PostgreSQL
 | 10) Editorial | ✅ Agree | 일괄 수정 |
 
 > **GPT-5.2 Pro와의 합의점**: 10건 중 **9건 완전 동의**, **1건 부분 동의** (#4 — 원칙상 동의하나 실무적으로 mixed mode 제안). 전체적으로 GPT의 리뷰 품질은 **매우 높음** (Antigravity 자체 검증 시 누락한 항목 4건 — #1 TLS, #4 Secrets, #5 Ledger auth, #6 Databricks identity — 을 GPT가 추가 발견).
+
+Review time : 2026-02-15 08:55
+Reviewer : GPT-5.2 Pro
+
+
+LLMs_review_v02.md(리뷰/권고) 10개 항목을 기준으로, README.md(v02)의 **리소스·네트워크·보안 규칙 기술이 “리뷰에서 제안한 방향과 일관되게 반영되었는지”**를 항목별로 대조했습니다.
+
+## 결론 요약
+
+* **10개 중 7개는 README에서 “리뷰 권고대로” 반영되어 정합**합니다. (TLS 백엔드 포트, Kafka 9093 통일, Ledger 인증서, Databricks MI, Data UDR 주석, Bastion CIDR 등)
+* **3개는 “부분 반영” 상태**입니다. 남은 불일치는 대부분 **문구/표기 레벨(정책 해석이 갈리는 부분)**이라, README에서 몇 줄만 정리하면 리뷰와 완전히 정합해집니다.
+
+---
+
+## 리뷰 항목별 정합성 체크 결과 (LLMs_review_v02 → README v02)
+
+아래는 LLMs_review_v02.md의 10개 지적사항을 README에 매핑한 결과입니다.
+
+1. **AppGW→AKS “HTTP 8080” vs TLS 베이스라인**
+
+* README: **Perimeter→Application이 8443(TLS)로 통일**되고, 8080 언급이 제거되어 리뷰 권고와 정합합니다.
+
+2. **“유일한 외부 진입점” 문구 vs Bastion(운영) 인입 경로**
+
+* README: NSG 규칙 설명에서 **Application-plane(AppGW) vs Management-plane(Bastion)**로 분리한 문구가 있어 방향은 맞습니다.
+* 다만, README 내부에 **여전히 상충하는 문구/표기**가 남아 있어 “부분 정합”입니다(아래 ‘남은 불일치’ 참고).
+
+3. **Event Hubs: Kafka 9093 vs AMQPS 혼재**
+
+* README: Firewall Allowlist와 NSG가 **Kafka(SASL_SSL, 9093)**로 통일되고, **PE 구성 시 dead rule 주석**도 추가되어 리뷰 권고와 정합합니다.
+
+4. **“Passwordless(MI everywhere)” 주장 vs Key Vault 시크릿 목록(ConnStr/Token)**
+
+* README: “MI 우선 + 일부는 시크릿”의 **mixed mode 원칙**으로 정리되고, 시크릿 목록도 “MI 대체 가능/유지/제거 예정”으로 정돈되어 큰 방향은 리뷰·Antigravity 제안과 정합합니다.
+* 다만 RBAC/보안표 일부 표기가 아직 완전히 일치하지 않아 “부분 정합”입니다(아래 참고).
+
+5. **Confidential Ledger 인증: API key(부정확) vs Certificate/AAD**
+
+* README: `ledger-client-cert`로 바뀌고, Ledger 인증이 Certificate/AAD로 정리되어 정합합니다.
+
+6. **Databricks: Managed Identity vs Service Principal 혼재**
+
+* README: Databricks를 **Managed Identity(Unity Catalog)로 단일화**하고, 외부 호출용 토큰만 남겨 정합합니다.
+
+7. **Data Subnet: UDR(→Firewall) vs NSG(Data→Egress 차단) 모순 가능성**
+
+* README: Data UDR을 **“PaaS Only, 방어적 설정”**으로 주석 처리해 리뷰 권고대로 정합합니다.
+
+8. **Bastion CIDR: /24 vs /26 혼재**
+
+* README: Bastion CIDR이 **10.0.1.0/26**으로 통일되어 정합합니다.
+
+9. **총 리소스 카운트(애플리케이션 5 vs 6)**
+
+* README: “AKS Pods”에 5개(Account/Commerce/Crypto/SyncConsumer/AdminAPI)로 명시하고 Admin UI를 별도(Web Dashboard)로 둬서, **5개로 해석 가능**해 정합한 편입니다.
+
+10. **Editorial: 섹션 넘버/HTTP↔HTTPS/Slack↔Teams 표기**
+
+* README: 섹션/HTTPS 표기는 정리됐지만, **Slack/Teams 표기가 혼재**되어 “부분 정합”입니다.
+
+---
+
+## 남아있는 “부분 정합” 3건 — README에서 정리하면 리뷰와 완전 일치
+
+아래 3건은 README 문서 내부에서 상충하는 문구가 남아 있어서, LLMs_review_v02의 “정합성 개선” 의도와 100% 맞지 않는 지점입니다.
+
+### A) Ingress(외부 진입점) 설명: AppGW-only vs Bastion 경로 문구 충돌
+
+* README는 NSG 설명에서 **“유일한 애플리케이션 트래픽 진입점”**으로 한정하여 리뷰 권고를 반영했습니다.
+* 그런데 같은 README의 Azure Firewall DNAT 섹션에
+  **“모든 인바운드는 AppGW 경유”** 문구가 남아 있습니다. 이 문구는 Bastion 기반 운영 인입과 충돌합니다. 
+
+**권장 수정(문구만 교체하면 됨)**
+
+* DNAT 행 설명을 아래처럼 바꾸면 문서 메시지가 일관됩니다.
+
+  * 예: “Firewall DNAT는 사용하지 않음. **애플리케이션 인바운드 = AppGW**, **운영(Management) 인바운드 = Bastion Public IP(HTTPS 443)** 경유.”
+
+---
+
+### B) Bastion “프로토콜/표기”가 리뷰 문구와 다름
+
+* LLMs_review_v02는 Ops 경로를 “Internet→Bastion(통상 HTTPS 443)”로 설명했습니다. 
+* README 다이어그램은 Admin→Bastion을 **“Secure SSH”**로 표기합니다. 이 표기는 “사용자가 SSH 세션을 연다”는 의미로는 맞을 수 있지만, 네트워크/보안 구현 관점에서는 **Bastion 인입은 보통 443**이므로 리뷰와 표기 레벨에서 어긋납니다.
+
+**권장 수정(표기 정밀화)**
+
+* 다이어그램 라벨을 “HTTPS 443 (Bastion)”으로 바꾸고, Bastion→AKS Node만 “SSH 22(터널)”로 두면 리뷰와 더 정확히 일치합니다.
+
+---
+
+### C) “mixed mode( MI 우선 + 일부 시크릿 )”는 반영됐지만, RBAC 표가 아직 완전히 일치하지 않음
+
+* README는 원칙 문장에서 mixed mode를 명시하고, `eventhubs-connection-string`을 “Kafka SASL_SSL 필수”로 유지한다고 적었습니다.
+* 그런데 README의 RBAC 매트릭스에는 **Service(AKS Pod)가 Event Hubs에 Managed Identity 기반으로 접근**한다고 되어 있어, 같은 README의 시크릿 목록/원칙과 **표 수준에서 충돌**합니다. 
+
+또한, Antigravity 제안표는 “eventhubs-connection-string 유지(Kafka SASL_SSL 필요)”를 명시했습니다. 
+
+**권장 수정(선택지 중 하나로 단일화)**
+
+* 선택지 1(가장 단순): RBAC 행에서 “Event Hubs”를 빼고, Event Hubs는 “Kafka SASL_SSL(시크릿)”로 별도 행/주석으로 분리.
+* 선택지 2(둘 다 허용): RBAC/보안표에 “Event Hubs (Kafka)=SAS, Event Hubs (AMQP/HTTPS)=MI”처럼 **클라이언트 방식별로 분리**하고, 문서 전체에서 “Kafka 사용”을 주로 한다는 점을 명확화.
+
+**추가로 확인이 필요한(불확실) 부분**
+
+* README는 `api.upbit.com`, `openapi.naver.com`을 Allowlist로 명시하지만, **외부 API 인증 키/토큰을 Key Vault에 저장한다는 항목은 시크릿 목록에 없습니다.**
+
+  * 외부 API가 **인증 키가 필요 없는 공개 엔드포인트만 사용**한다면 누락이 아닐 수 있습니다.
+  * 외부 API가 **키가 필요한 엔드포인트를 사용**한다면 README 시크릿 목록이 빠진 것입니다.
+    이 부분은 README가 “키가 필요/불필요”를 명시하면 리뷰 문서의 mixed mode 의도와도 더 잘 맞습니다. (현재 상태만으로는 “불확실”입니다.)
+
+---
+
+## 마지막으로: “Slack vs Teams” 표기만 통일하면 문서가 더 깔끔해짐
+
+* README는 Observability 다이어그램에서 Teams를 쓰지만, Error/Retry·Alert Rule 표에는 Slack이 남아 있습니다. 이는 LLMs_review_v02의 editorial 지적과 아직 완전 정합하지 않습니다.
+* **한 쪽(Teams 또는 Slack)으로 용어를 통일**하면 해결됩니다.
+
+---
+
+원하면, 위 3개(ingress 문구/DNAT, Bastion 라벨, RBAC(Event Hubs) 정리 + Slack/Teams 통일)에 대해 **README.md에 바로 붙여넣을 수 있는 “수정 diff(교체 문장)”** 형태로 정리해줄게.
+
+
