@@ -1157,7 +1157,7 @@ flowchart LR
 | **CI/CD Pipeline** | GitHub Actions → Azure | ACR (Push), AKS (Deploy) | Contributor (제한) | Service Principal + OIDC |
 
 **핵심 원칙:**
-- **비밀번호 없는 인증 (Passwordless)**: 모든 서비스-to-서비스 인증은 Managed Identity 사용
+- **인증 원칙 (Identity-First)**: Azure 서비스 간은 Managed Identity 우선, 외부 API 및 Kafka SASL 인증은 Key Vault 시크릿 사용
 - **최소 권한 원칙 (Least Privilege)**: 각 역할은 필요한 최소 권한만 부여
 - **MFA 강제**: 운영자(Admin) 접근 시 다중 인증 필수
 
@@ -1177,14 +1177,14 @@ flowchart LR
 
 **Key Vault에 저장되는 시크릿 목록:**
 
-| 시크릿 이름 (예시) | 용도 | 사용 서비스 |
-|:---|:---|:---|
-| `sql-connection-string` | Azure SQL DB 접속 문자열 | Account, Commerce |
-| `postgresql-connection-string` | Backoffice DB 접속 문자열 | Sync Consumer, Admin API |
-| `eventhubs-connection-string` | Event Hubs Kafka 인증 정보 | 모든 마이크로서비스 |
-| `ledger-client-cert` | Confidential Ledger 클라이언트 인증서 (PEM) | Crypto Service |
-| `acr-login-credential` | Container Registry 인증 (backup) | AKS |
-| `databricks-token` | Databricks Workspace 접근 토큰 | ETL 파이프라인 |
+| 시크릿 이름 (예시) | 용도 | 사용 서비스 | MI 대체 여부 |
+|:---|:---|:---|:---|
+| `sql-connection-string` | Azure SQL DB 접속 문자열 | Account, Commerce | ⚠️ MI 대체 가능 (`DefaultAzureCredential`) |
+| `postgresql-connection-string` | Backoffice DB 접속 문자열 | Sync Consumer, Admin API | ⚠️ MI 대체 가능 (`azure.identity`) |
+| `eventhubs-connection-string` | Event Hubs Kafka 인증 정보 | 모든 마이크로서비스 | ✅ 유지 (Kafka SASL_SSL 필수) |
+| `ledger-client-cert` | Confidential Ledger 클라이언트 인증서 (PEM) | Crypto Service | ✅ 유지 (Certificate auth) |
+| `acr-login-credential` | Container Registry 인증 (backup) | AKS | ❌ 제거 예정 (`az aks update --attach-acr`로 MI 대체) |
+| `databricks-token` | Databricks Workspace 접근 토큰 | ETL 파이프라인 | ✅ 유지 (CI/CD REST API PAT) |
 
 **Key Vault 시크릿 참조 흐름도:**
 
