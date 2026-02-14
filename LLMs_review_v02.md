@@ -1,3 +1,7 @@
+# LLM Review — Architecture Manual v02
+
+---
+
 Review time : 2026-02-15 07:51
 Review tool : GPT-5.2 Pro
 
