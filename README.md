@@ -1,6 +1,6 @@
 # 통합 아키텍처 (Total Architecture) 
 # 버전 : v02
-# Reference : LLMs_review.md
+# Reference : LLMs_review_v02.md
 # 수정일 : 2026-02-15 09:00
 
 > **문서 목적**: `Infrastructure_Architecture.md`의 **물리적 배포 구조**와 `2.1.1 통제 및 분석 레이어 아키텍쳐.md`의 **보안/통제 상세 설계**, 그리고 **백오피스 아키텍처**를 하나로 통합한 마스터 아키텍처입니다.
