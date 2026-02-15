@@ -46,6 +46,7 @@
   - [7.1 리소스 설정 (Resource Configuration)](#71-리소스-설정-resource-configuration)
   - [7.2 네트워크 설정 (Network Configuration)](#72-네트워크-설정-network-configuration)
   - [7.3 보안 설정 (Security Configuration)](#73-보안-설정-security-configuration)
+  - [7.4 네이밍 규칙 (Naming Convention)](#74-네이밍-규칙-naming-convention)
 - [부록: 용어 사전 (Glossary)](#부록-용어-사전-glossary)
 
 ---
@@ -1747,6 +1748,49 @@ flowchart LR
 > - 모든 인증: **Managed Identity 우선** (비밀번호 없는 인증)
 > - 모든 저장 데이터: **At-Rest Encryption** (AES-256 이상)
 > - 모든 관리 접근: **Azure AD + MFA** 필수
+
+---
+
+### 7.4 네이밍 규칙 (Naming Convention)
+
+> 모든 리소스는 **`nsc-`** 접두어로 시작합니다. Azure 제약으로 하이픈이 불가능한 리소스만 예외입니다.
+
+**패턴**: `nsc-{리소스약어}-{환경}` (예: `nsc-rg-dev`)
+
+| 리소스 | 약어 | 패턴 | 예시 (dev) |
+|:---|:---|:---|:---|
+| Resource Group | `rg` | `nsc-rg-{env}` | `nsc-rg-dev` |
+| VNet | `vnet` | `nsc-vnet-{env}` | `nsc-vnet-dev` |
+| Subnet | `snet` | `nsc-snet-{역할}` | `nsc-snet-perimeter` |
+| NSG | `nsg` | `nsc-nsg-{역할}` | `nsc-nsg-app` |
+| UDR | `udr` | `nsc-udr-{역할}` | `nsc-udr-app` |
+| Application Gateway | `agw` | `nsc-agw-{env}` | `nsc-agw-dev` |
+| WAF Policy | `waf` | `nsc-waf-{env}` | `nsc-waf-dev` |
+| AKS | `aks` | `nsc-aks-{env}` | `nsc-aks-dev` |
+| Bastion | `bas` | `nsc-bas-{env}` | `nsc-bas-dev` |
+| Azure Firewall | `fw` | `nsc-fw-{env}` | `nsc-fw-dev` |
+| Firewall Policy | `fwp` | `nsc-fwp-{env}` | `nsc-fwp-dev` |
+| Event Hubs Namespace | `evh` | `nsc-evh-{env}` | `nsc-evh-dev` |
+| SQL Server | `sql` | `nsc-sql-{env}` | `nsc-sql-dev` |
+| PostgreSQL | `pg` | `nsc-pg-{env}` | `nsc-pg-dev` |
+| Confidential Ledger | `cl` | `nsc-cl-{env}` | `nsc-cl-dev` |
+| Key Vault | `kv` | `nsc-kv-{env}` | `nsc-kv-dev` |
+| Databricks | `dbw` | `nsc-dbw-{env}` | `nsc-dbw-dev` |
+| Log Analytics | `law` | `nsc-law-{env}` | `nsc-law-dev` |
+| Application Insights | `ai` | `nsc-ai-{env}` | `nsc-ai-dev` |
+| Public IP | `pip` | `nsc-pip-{역할}` | `nsc-pip-agw` |
+| Private Endpoint | `pe` | `nsc-pe-{대상}` | `nsc-pe-sqldb` |
+| Private DNS Zone | — | Azure 표준 FQDN | `privatelink.database.windows.net` |
+
+**예외 (하이픈 불가 — Azure 제약):**
+
+| 리소스 | 제약 | 패턴 | 예시 (dev) |
+|:---|:---|:---|:---|
+| **Storage Account (ADLS Gen2)** | 소문자+숫자만, 3~24자 | `nscst{env}{suffix}` | `nscstdev3a7k` |
+| **Container Registry (ACR)** | 영숫자만, 5~50자 | `nscacr{env}{suffix}` | `nsccacrdev3a7k` |
+
+> `{suffix}`는 Terraform `random_string`(6자)으로 글로벌 유니크 보장. Storage Account/ACR만 필요.
+> `{env}`는 `dev` → `stg` → `prod` 순서로 환경 구분.
 
 ---
 
