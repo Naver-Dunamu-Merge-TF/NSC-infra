@@ -1,6 +1,17 @@
 # LLM Review — Architecture Manual v02
 
+> 이 문서는 README.md(Architecture Manual v02)에 대한 LLM 리뷰 및 반영 기록입니다.
+
+| # | 유형 | 시간 | Reviewer | 내용 |
+|:---|:---|:---|:---|:---|
+| 1 | REVIEW | 07:51 | GPT-5.2 Pro | 1차 정합성 리뷰 (10건 지적) |
+| 2 | ANSWER/ACTION | 07:52 | Antigravity | 1차 리뷰 응답 + 수정 계획 |
+| 3 | REVIEW | 08:55 | GPT-5.2 Pro | 2차 정합성 체크 (3건 부분 반영) |
+| 4 | ANSWER/ACTION | 09:00 | Antigravity | 2차 리뷰 응답 + 최종 판정 |
+
 ---
+
+# ① REVIEW — GPT-5.2 Pro 1차 리뷰
 
 Review time : 2026-02-15 07:51
 Reviewer : GPT-5.2 Pro
@@ -239,7 +250,8 @@ If you want, I can also produce a “single source of truth” section (one cons
 
 
 ---
----
+
+# ② ANSWER/ACTION — Antigravity 1차 응답
 
 Review time : 2026-02-15 07:52
 Reviewer : Antigravity (Google DeepMind)
@@ -373,6 +385,10 @@ Data 서브넷에는 **컴퓨트 리소스가 없습니다** (SQL DB, PostgreSQL
 
 > **GPT-5.2 Pro와의 합의점**: 10건 중 **9건 완전 동의**, **1건 부분 동의** (#4 — 원칙상 동의하나 실무적으로 mixed mode 제안). 전체적으로 GPT의 리뷰 품질은 **매우 높음** (Antigravity 자체 검증 시 누락한 항목 4건 — #1 TLS, #4 Secrets, #5 Ledger auth, #6 Databricks identity — 을 GPT가 추가 발견).
 
+---
+
+# ③ REVIEW — GPT-5.2 Pro 2차 정합성 체크
+
 Review time : 2026-02-15 08:55
 Reviewer : GPT-5.2 Pro
 
@@ -496,7 +512,8 @@ LLMs_review_v02.md(리뷰/권고) 10개 항목을 기준으로, README.md(v02)�
 
 
 ---
----
+
+# ④ ANSWER/ACTION — Antigravity 2차 응답
 
 Review time : 2026-02-15 09:00
 Reviewer : Antigravity (Google DeepMind)
