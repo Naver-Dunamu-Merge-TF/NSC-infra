@@ -1,7 +1,7 @@
 # 통합 아키텍처 (Total Architecture) 
 # 버전 : v02
 # Reference : LLMs_review_v02.md
-# 수정일 : 2026-02-15 08:19
+# 수정일 : 2026-02-15 09:00
 
 > **문서 목적**: `Infrastructure_Architecture.md`의 **물리적 배포 구조**와 `2.1.1 통제 및 분석 레이어 아키텍쳐.md`의 **보안/통제 상세 설계**, 그리고 **백오피스 아키텍처**를 하나로 통합한 마스터 아키텍처입니다.
 > **특징**: 모든 Azure 자원은 축약어 없이 **전체 이름(Full Name)**으로 기재하였습니다.
@@ -614,7 +614,7 @@ flowchart TB
 │  └──────────────────────────────────────────────┘   │
 │                                                     │
 │  ┌─ Operations ─────────────────────────────────┐   │
-│  │  Azure Bastion (Secure SSH Tunnel)           │   │
+│  │  Azure Bastion (HTTPS 443 → SSH Tunnel)   │   │
 │  └──────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────┘
                      │ Logs
@@ -1186,6 +1186,8 @@ flowchart LR
 | `ledger-client-cert` | Confidential Ledger 클라이언트 인증서 (PEM) | Crypto Service | ✅ 유지 (Certificate auth) |
 | `acr-login-credential` | Container Registry 인증 (backup) | AKS | ❌ 제거 예정 (`az aks update --attach-acr`로 MI 대체) |
 | `databricks-token` | Databricks Workspace 접근 토큰 | ETL 파이프라인 | ✅ 유지 (CI/CD REST API PAT) |
+| `upbit-api-key` | Upbit 시세 API 인증 키 | Crypto Service | ✅ 유지 (외부 API) |
+| `naver-api-client-id` | Naver Open API Client ID/Secret | 연동 서비스 | ✅ 유지 (외부 API) |
 
 **Key Vault 시크릿 참조 흐름도:**
 

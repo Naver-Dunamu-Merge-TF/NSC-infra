@@ -495,3 +495,62 @@ LLMs_review_v02.md(리뷰/권고) 10개 항목을 기준으로, README.md(v02)�
 원하면, 위 3개(ingress 문구/DNAT, Bastion 라벨, RBAC(Event Hubs) 정리 + Slack/Teams 통일)에 대해 **README.md에 바로 붙여넣을 수 있는 “수정 diff(교체 문장)”** 형태로 정리해줄게.
 
 
+---
+---
+
+Review time : 2026-02-15 09:00
+Reviewer : Antigravity (Google DeepMind)
+
+## GPT-5.2 Pro 2차 리뷰에 대한 Antigravity 검토
+
+GPT-5.2 Pro의 2차 리뷰(정합성 체크)를 대조 검증했습니다. 결과는 아래와 같습니다.
+
+---
+
+### GPT 2차 리뷰 반영 상태 (A/B/C + Slack)
+
+| GPT 지적 항목 | 반영 여부 | 검증 결과 |
+|:---|:---|:---|
+| **A) DNAT 문구 — "모든 인바운드는 AppGW 경유"** | ✅ 해결 | `Firewall DNAT 미사용. 애플리케이션 인바운드 = AppGW(443), 운영 인바운드 = Bastion PIP(443)` 으로 수정 완료 |
+| **B) Bastion 라벨 — "Secure SSH" → HTTPS 443** | ✅ 해결 | Mermaid 다이어그램 4곳 + 라벨 설명표 모두 `HTTPS 443 (Bastion)` → `SSH 22 (터널)` 2단계로 수정 완료 |
+| **C) RBAC Event Hubs — MI vs Connection String 충돌** | ✅ 해결 | RBAC 매트릭스에서 `Service (AKS Pod)` 행을 **2행으로 분리** — MI 대상(KV/ACR/SQL) vs Kafka SASL_SSL(Event Hubs) |
+| **Slack/Teams 표기 혼재** | ✅ 해결 | README 전체에서 `Slack` 0건 확인 (grep 결과). 모든 알림 채널이 `Teams`로 통일 |
+
+---
+
+### 잔여 사항 (Minor)
+
+| 항목 | 상태 | 비고 |
+|:---|:---|:---|
+| ASCII art (L617) `Secure SSH Tunnel` | ⚠️ 잔존 | ASCII 다이어그램 내부 텍스트. Mermaid 아님. 수정 가능하나 **영향 없음** (렌더링 X) |
+| 외부 API 인증 키 (`upbit`, `naver`) | ⚠️ 미기재 | Firewall Allowlist에 `api.upbit.com`, `openapi.naver.com` 있으나 Key Vault 시크릿 목록에 해당 키 없음 |
+| README 수정일 | ⚠️ 갱신 필요 | 현재 `08:19` → 실제 최종 수정 `09:00`으로 업데이트 필요 |
+
+---
+
+### Antigravity Action Plan
+
+**즉시 실행 (이번 커밋):**
+
+1. ✅ ASCII art L617 `Secure SSH Tunnel` → `Bastion (HTTPS 443 → SSH)` 수정
+2. ✅ 외부 API 키를 Key Vault 시크릿 목록에 추가: `upbit-api-key`, `naver-api-key` (공개 API면 "인증 불필요" 주석)
+3. ✅ README 수정일 `08:19` → `09:00` 갱신
+4. ✅ Git commit
+
+**향후 (Terraform IaC 작성 시):**
+
+- 위 Architecture Manual v02를 **Single Source of Truth**로 삼아 `main.tf` 모듈 구조 설계
+- 각 서브넷별 `variables.tf` → Manual의 CIDR/NSG/UDR/PE 테이블과 1:1 대응
+- Checkov/tfsec 기반 보안 검증 → Manual의 Security Baseline 체크리스트 자동화
+
+---
+
+### 정합성 최종 판정
+
+| 기준 | 결과 |
+|:---|:---|
+| **1차 GPT 리뷰 10건** | ✅ **10/10 반영** |
+| **2차 GPT 리뷰 3건 + Slack** | ✅ **4/4 반영** (minor 2건 잔존 → 이번 커밋에서 해결) |
+| **문서 내부 자기일관성** | ✅ 확보 (NSG ↔ UDR ↔ RBAC ↔ Firewall ↔ 다이어그램 모두 정합) |
+
+> **결론**: Architecture Manual v02는 **리뷰 지적 사항이 모두 반영**되었으며, minor 2건(ASCII art + 외부 API 키)만 이번 커밋에서 마무리하면 **완전 정합** 상태입니다.
