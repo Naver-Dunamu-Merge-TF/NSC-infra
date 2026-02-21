@@ -3,11 +3,11 @@
 # =============================================================================
 
 variable "resource_group_name" {
-  type = string                                         # RG 이름
+  type = string
 }
 
 variable "location" {
-  type = string                                         # Azure 리전
+  type = string
 }
 
 variable "project_prefix" {

@@ -11,9 +11,9 @@ output "databricks_workspace_url" {
 }
 
 output "adls_storage_id" {
-  value = azurerm_storage_account.adls.id                # PE 생성용
+  value = azurerm_storage_account.adls.id
 }
 
 output "adls_storage_name" {
-  value = azurerm_storage_account.adls.name              # 참조용
+  value = azurerm_storage_account.adls.name
 }

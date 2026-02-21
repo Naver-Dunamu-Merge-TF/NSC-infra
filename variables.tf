@@ -33,7 +33,7 @@ variable "subnet_cidrs" {
     perimeter           = "10.0.0.0/24"                 # AppGW + WAF (256 IPs)
     bastion             = "10.0.1.0/26"                 # Azure Bastion (64 IPs)
     app                 = "10.0.2.0/23"                 # AKS Node Pool (512 IPs)
-    messaging           = "10.0.3.0/24"                 # Event Hubs PE (256 IPs)
+    messaging           = "10.0.9.0/24"                 # Event Hubs PE (256 IPs)
     data                = "10.0.4.0/24"                 # SQL/PG/Ledger PE (256 IPs)
     security            = "10.0.5.0/24"                 # KV/ACR PE (256 IPs)
     analytics_host      = "10.0.6.0/24"                 # Databricks Host (/23 분할)

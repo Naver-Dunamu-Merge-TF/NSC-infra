@@ -11,9 +11,9 @@ output "aks_fqdn" {
 }
 
 output "aks_identity_principal_id" {
-  value = azurerm_kubernetes_cluster.main.identity[0].principal_id  # MI Principal ID (RBAC용)
+  value = azurerm_kubernetes_cluster.main.identity[0].principal_id
 }
 
 output "kubelet_identity_object_id" {
-  value = azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id  # Kubelet MI (AcrPull용)
+  value = azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id
 }

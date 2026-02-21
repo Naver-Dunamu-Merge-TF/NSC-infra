@@ -20,7 +20,7 @@ variable "environment" {
 
 variable "perimeter_subnet_id" {
   description = "AppGW 배치 서브넷"
-  type        = string                                  # Perimeter 서브넷 ID
+  type        = string
 }
 
 variable "bastion_subnet_id" {

@@ -20,7 +20,7 @@ variable "environment" {
 
 variable "suffix" {
   description = "글로벌 유니크 suffix (ADLS Storage Account)"
-  type        = string                                  # random_string 결과
+  type        = string
 }
 
 variable "vnet_id" {

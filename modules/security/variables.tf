@@ -3,24 +3,24 @@
 # =============================================================================
 
 variable "resource_group_name" {
-  type = string                                         # RG 이름
+  type = string
 }
 
 variable "location" {
-  type = string                                         # Azure 리전
+  type = string
 }
 
 variable "project_prefix" {
-  type = string                                         # 네이밍 접두어: nsc
+  type = string
 }
 
 variable "environment" {
-  type = string                                         # 환경: dev / stg / prod
+  type = string
 }
 
 variable "suffix" {
   description = "글로벌 유니크 이름용 suffix (ACR)"
-  type        = string                                  # random_string 결과
+  type        = string
 }
 
 variable "tenant_id" {
@@ -34,5 +34,5 @@ variable "vnet_id" {
 }
 
 variable "tags" {
-  type = map(string)                                    # 공통 태그
+  type = map(string)
 }

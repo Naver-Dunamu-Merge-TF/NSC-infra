@@ -29,11 +29,9 @@ resource "random_string" "suffix" {
   upper   = false                                       # 소문자만
 }
 
-# Resource Group (§7.4: nsc-rg-{env})
-resource "azurerm_resource_group" "main" {
-  name     = "${var.project_prefix}-rg-${var.environment}"  # nsc-rg-dev
-  location = var.location                               # Korea Central
-  tags     = var.tags                                   # 공통 태그
+# Resource Group — 기존 RG 참조 (교육 환경: 신규 RG 생성 권한 없음)
+data "azurerm_resource_group" "main" {
+  name = "2dt-final-team4"
 }
 
 data "azurerm_client_config" "current" {}               # tenant_id, object_id 참조
@@ -46,13 +44,12 @@ data "azurerm_client_config" "current" {}               # tenant_id, object_id �
 module "network" {
   source = "./modules/network"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
   project_prefix      = var.project_prefix              # nsc
   environment         = var.environment                 # dev
   vnet_cidr           = var.vnet_cidr                   # 10.0.0.0/16
   subnet_cidrs        = var.subnet_cidrs                # 서브넷 CIDR 맵
-  firewall_private_ip = module.perimeter.firewall_private_ip  # Phase 3 Firewall → UDR
   tags                = var.tags
 }
 
@@ -60,8 +57,8 @@ module "network" {
 module "monitoring" {
   source = "./modules/monitoring"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
   project_prefix      = var.project_prefix
   environment         = var.environment
   tags                = var.tags
@@ -75,8 +72,8 @@ module "monitoring" {
 module "security" {
   source = "./modules/security"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
   project_prefix      = var.project_prefix
   environment         = var.environment
   suffix              = random_string.suffix.result      # ACR suffix
@@ -89,8 +86,8 @@ module "security" {
 module "data" {
   source = "./modules/data"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
   project_prefix      = var.project_prefix
   environment         = var.environment
   tenant_id           = data.azurerm_client_config.current.tenant_id
@@ -103,8 +100,8 @@ module "data" {
 module "private_endpoints" {
   source = "./modules/private_endpoints"
 
-  resource_group_name    = azurerm_resource_group.main.name
-  location               = azurerm_resource_group.main.location
+  resource_group_name    = data.azurerm_resource_group.main.name
+  location               = data.azurerm_resource_group.main.location
   project_prefix         = var.project_prefix
   subnet_ids             = module.network.subnet_ids     # 서브넷 ID 맵
   dns_zone_ids           = module.security.dns_zone_ids  # DNS Zone ID 맵
@@ -126,8 +123,8 @@ module "private_endpoints" {
 module "compute" {
   source = "./modules/compute"
 
-  resource_group_name        = azurerm_resource_group.main.name
-  location                   = azurerm_resource_group.main.location
+  resource_group_name        = data.azurerm_resource_group.main.name
+  location                   = data.azurerm_resource_group.main.location
   project_prefix             = var.project_prefix
   environment                = var.environment
   aks_subnet_id              = module.network.subnet_ids["app"]  # Application 서브넷
@@ -139,8 +136,8 @@ module "compute" {
 module "messaging" {
   source = "./modules/messaging"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
   project_prefix      = var.project_prefix
   environment         = var.environment
   tags                = var.tags
@@ -150,8 +147,8 @@ module "messaging" {
 module "perimeter" {
   source = "./modules/perimeter"
 
-  resource_group_name   = azurerm_resource_group.main.name
-  location              = azurerm_resource_group.main.location
+  resource_group_name   = data.azurerm_resource_group.main.name
+  location              = data.azurerm_resource_group.main.location
   project_prefix        = var.project_prefix
   environment           = var.environment
   perimeter_subnet_id   = module.network.subnet_ids["perimeter"]  # Perimeter 서브넷
@@ -163,6 +160,18 @@ module "perimeter" {
   tags                  = var.tags
 }
 
+# Routing — UDR (§4.2, network↔perimeter 순환 의존성 해소용 독립 모듈)
+module "routing" {
+  source = "./modules/routing"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  firewall_private_ip = module.perimeter.firewall_private_ip  # Firewall 완료 후
+  subnet_ids          = module.network.subnet_ids             # Network 완료 후
+  tags                = var.tags
+}
+
 # =============================================================================
 # Phase 4: Analytics + Diagnostics
 # =============================================================================
@@ -171,8 +180,8 @@ module "perimeter" {
 module "analytics" {
   source = "./modules/analytics"
 
-  resource_group_name             = azurerm_resource_group.main.name
-  location                        = azurerm_resource_group.main.location
+  resource_group_name             = data.azurerm_resource_group.main.name
+  location                        = data.azurerm_resource_group.main.location
   project_prefix                  = var.project_prefix
   environment                     = var.environment
   suffix                          = random_string.suffix.result

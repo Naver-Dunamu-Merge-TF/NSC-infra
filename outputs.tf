@@ -4,7 +4,7 @@
 
 # --- Phase 1: Foundation ---
 output "resource_group_name" {
-  value = azurerm_resource_group.main.name               # nsc-rg-dev
+  value = data.azurerm_resource_group.main.name          # 2dt-final-team4
 }
 
 output "vnet_id" {
