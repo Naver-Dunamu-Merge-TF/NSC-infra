@@ -1,0 +1,961 @@
+﻿
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.500 
+Update available 3.2.500 -> 3.2.501
+Run pip3 install -U checkov to update 
+
+
+terraform scan results:
+
+Passed checks: 149, Failed checks: 45, Skipped checks: 0
+
+Check: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_host
+	File: \modules\analytics\main.tf:6-11
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_host
+	File: \modules\analytics\main.tf:6-11
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_host
+	File: \modules\analytics\main.tf:6-11
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_host
+	File: \modules\analytics\main.tf:6-11
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_container
+	File: \modules\analytics\main.tf:13-18
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_container
+	File: \modules\analytics\main.tf:13-18
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_container
+	File: \modules\analytics\main.tf:13-18
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.analytics.azurerm_network_security_group.analytics_container
+	File: \modules\analytics\main.tf:13-18
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_36: "Ensure 'Trusted Microsoft Services' is enabled for Storage Account access"
+	PASSED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/enable-trusted-microsoft-services-for-storage-account-access
+[0mCheck: CKV_AZURE_59: "Ensure that Storage accounts disallow public access"
+	PASSED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-storage-accounts-disallow-public-access
+[0mCheck: CKV_AZURE_44: "Ensure Storage Account is using the latest version of TLS encryption"
+	PASSED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-storage-policies/bc-azr-storage-2
+[0mCheck: CKV_AZURE_3: "Ensure that 'enable_https_traffic_only' is enabled"
+	PASSED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-3
+[0mCheck: CKV_AZURE_8: "Ensure Kubernetes Dashboard is disabled"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-5
+[0mCheck: CKV_AZURE_4: "Ensure AKS logging to Azure Monitoring is Configured"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-1
+[0mCheck: CKV_AZURE_7: "Ensure AKS cluster has Network Policy configured"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-4
+[0mCheck: CKV_AZURE_143: "Ensure AKS cluster nodes do not have public IP addresses"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-143
+[0mCheck: CKV_AZURE_169: "Ensure Azure Kubernetes Cluster (AKS) nodes use scale sets"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/azr-kubernetes-169
+[0mCheck: CKV_AZURE_5: "Ensure RBAC is enabled on AKS clusters"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-2
+[0mCheck: CKV_AZURE_246: "Ensure Azure AKS cluster HTTP application routing is disabled"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-246
+[0mCheck: CKV_AZURE_52: "Ensure MSSQL is using the latest version of TLS encryption"
+	PASSED for resource: module.data.azurerm_mssql_server.main
+	File: \modules\data\main.tf:7-23
+	Calling File: \main.tf:88-99
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-mssql-is-using-the-latest-version-of-tls-encryption
+[0mCheck: CKV_AZURE_113: "Ensure that SQL server disables public network access"
+	PASSED for resource: module.data.azurerm_mssql_server.main
+	File: \modules\data\main.tf:7-23
+	Calling File: \main.tf:88-99
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-sql-server-disables-public-network-access
+[0mCheck: CKV_AZURE_229: "Ensure the Azure SQL Database Namespace is zone redundant"
+	PASSED for resource: module.data.azurerm_mssql_database.main
+	File: \modules\data\main.tf:26-40
+	Calling File: \main.tf:88-99
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-storage-policies/bc-azure-229
+[0mCheck: CKV_AZURE_223: "Ensure Event Hub Namespace uses at least TLS 1.2"
+	PASSED for resource: module.messaging.azurerm_eventhub_namespace.main
+	File: \modules\messaging\main.tf:7-17
+	Calling File: \main.tf:137-145
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-223
+[0mCheck: CKV_AZURE_228: "Ensure the Azure Event Hub Namespace is zone redundant"
+	PASSED for resource: module.messaging.azurerm_eventhub_namespace.main
+	File: \modules\messaging\main.tf:7-17
+	Calling File: \main.tf:137-145
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-storage-policies/bc-azure-228
+[0mCheck: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+	PASSED for resource: module.network.azurerm_virtual_network.main
+	File: \modules\network\main.tf:11-17
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+[0mCheck: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+	PASSED for resource: module.network.azurerm_virtual_network.main
+	File: \modules\network\main.tf:11-17
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.perimeter
+	File: \modules\network\main.tf:127-132
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.perimeter
+	File: \modules\network\main.tf:127-132
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.perimeter
+	File: \modules\network\main.tf:127-132
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.perimeter
+	File: \modules\network\main.tf:127-132
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_https
+	File: \modules\network\main.tf:135-147
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_https
+	File: \modules\network\main.tf:135-147
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_https
+	File: \modules\network\main.tf:135-147
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_https
+	File: \modules\network\main.tf:135-147
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_gw_manager
+	File: \modules\network\main.tf:149-161
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_gw_manager
+	File: \modules\network\main.tf:149-161
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_gw_manager
+	File: \modules\network\main.tf:149-161
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.perimeter_allow_gw_manager
+	File: \modules\network\main.tf:149-161
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.app
+	File: \modules\network\main.tf:163-168
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.app
+	File: \modules\network\main.tf:163-168
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.app
+	File: \modules\network\main.tf:163-168
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.app
+	File: \modules\network\main.tf:163-168
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_ssh_bastion
+	File: \modules\network\main.tf:170-182
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_ssh_bastion
+	File: \modules\network\main.tf:170-182
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_ssh_bastion
+	File: \modules\network\main.tf:170-182
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_ssh_bastion
+	File: \modules\network\main.tf:170-182
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_deny_ssh_internet
+	File: \modules\network\main.tf:184-196
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_deny_ssh_internet
+	File: \modules\network\main.tf:184-196
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_deny_ssh_internet
+	File: \modules\network\main.tf:184-196
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.app_deny_ssh_internet
+	File: \modules\network\main.tf:184-196
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_gw
+	File: \modules\network\main.tf:199-211
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_gw
+	File: \modules\network\main.tf:199-211
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_gw
+	File: \modules\network\main.tf:199-211
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_gw
+	File: \modules\network\main.tf:199-211
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_admin
+	File: \modules\network\main.tf:214-226
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_admin
+	File: \modules\network\main.tf:214-226
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_admin
+	File: \modules\network\main.tf:214-226
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_from_admin
+	File: \modules\network\main.tf:214-226
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_kafka_response
+	File: \modules\network\main.tf:228-240
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_kafka_response
+	File: \modules\network\main.tf:228-240
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_kafka_response
+	File: \modules\network\main.tf:228-240
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.app_allow_kafka_response
+	File: \modules\network\main.tf:228-240
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.admin
+	File: \modules\network\main.tf:243-248
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.admin
+	File: \modules\network\main.tf:243-248
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.admin
+	File: \modules\network\main.tf:243-248
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.admin
+	File: \modules\network\main.tf:243-248
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.admin_allow_from_appgw
+	File: \modules\network\main.tf:251-263
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.admin_allow_from_appgw
+	File: \modules\network\main.tf:251-263
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.admin_allow_from_appgw
+	File: \modules\network\main.tf:251-263
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.admin_allow_from_appgw
+	File: \modules\network\main.tf:251-263
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.messaging
+	File: \modules\network\main.tf:266-271
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.messaging
+	File: \modules\network\main.tf:266-271
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.messaging
+	File: \modules\network\main.tf:266-271
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.messaging
+	File: \modules\network\main.tf:266-271
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.messaging_allow_kafka
+	File: \modules\network\main.tf:274-286
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.messaging_allow_kafka
+	File: \modules\network\main.tf:274-286
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.messaging_allow_kafka
+	File: \modules\network\main.tf:274-286
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.messaging_allow_kafka
+	File: \modules\network\main.tf:274-286
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.data
+	File: \modules\network\main.tf:289-294
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.data
+	File: \modules\network\main.tf:289-294
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.data
+	File: \modules\network\main.tf:289-294
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.data
+	File: \modules\network\main.tf:289-294
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.data_deny_all_inbound
+	File: \modules\network\main.tf:296-308
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.data_deny_all_inbound
+	File: \modules\network\main.tf:296-308
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.data_deny_all_inbound
+	File: \modules\network\main.tf:296-308
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.data_deny_all_inbound
+	File: \modules\network\main.tf:296-308
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.bastion
+	File: \modules\network\main.tf:310-315
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.bastion
+	File: \modules\network\main.tf:310-315
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.bastion
+	File: \modules\network\main.tf:310-315
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.bastion
+	File: \modules\network\main.tf:310-315
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_https
+	File: \modules\network\main.tf:317-329
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_https
+	File: \modules\network\main.tf:317-329
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_https
+	File: \modules\network\main.tf:317-329
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_https
+	File: \modules\network\main.tf:317-329
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_gw_mgr
+	File: \modules\network\main.tf:331-343
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_gw_mgr
+	File: \modules\network\main.tf:331-343
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_gw_mgr
+	File: \modules\network\main.tf:331-343
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_gw_mgr
+	File: \modules\network\main.tf:331-343
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_lb
+	File: \modules\network\main.tf:345-357
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_lb
+	File: \modules\network\main.tf:345-357
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_lb
+	File: \modules\network\main.tf:345-357
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_lb
+	File: \modules\network\main.tf:345-357
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_data_plane
+	File: \modules\network\main.tf:359-371
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_data_plane
+	File: \modules\network\main.tf:359-371
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_data_plane
+	File: \modules\network\main.tf:359-371
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_inbound_data_plane
+	File: \modules\network\main.tf:359-371
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_ssh_rdp
+	File: \modules\network\main.tf:374-386
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_ssh_rdp
+	File: \modules\network\main.tf:374-386
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_ssh_rdp
+	File: \modules\network\main.tf:374-386
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_ssh_rdp
+	File: \modules\network\main.tf:374-386
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_azure
+	File: \modules\network\main.tf:388-400
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_azure
+	File: \modules\network\main.tf:388-400
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_azure
+	File: \modules\network\main.tf:388-400
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_azure
+	File: \modules\network\main.tf:388-400
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_data_plane
+	File: \modules\network\main.tf:402-414
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_data_plane
+	File: \modules\network\main.tf:402-414
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_data_plane
+	File: \modules\network\main.tf:402-414
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.bastion_outbound_data_plane
+	File: \modules\network\main.tf:402-414
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.security
+	File: \modules\network\main.tf:450-455
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.security
+	File: \modules\network\main.tf:450-455
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_group.security
+	File: \modules\network\main.tf:450-455
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_group.security
+	File: \modules\network\main.tf:450-455
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.security_deny_all_inbound
+	File: \modules\network\main.tf:457-469
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-http-port-80-access-from-the-internet-is-restricted
+[0mCheck: CKV_AZURE_9: "Ensure that RDP access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.security_deny_all_inbound
+	File: \modules\network\main.tf:457-469
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-2
+[0mCheck: CKV_AZURE_10: "Ensure that SSH access is restricted from the internet"
+	PASSED for resource: module.network.azurerm_network_security_rule.security_deny_all_inbound
+	File: \modules\network\main.tf:457-469
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-3
+[0mCheck: CKV_AZURE_77: "Ensure that UDP Services are restricted from the Internet "
+	PASSED for resource: module.network.azurerm_network_security_rule.security_deny_all_inbound
+	File: \modules\network\main.tf:457-469
+	Calling File: \main.tf:45-56
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-udp-services-are-restricted-from-the-internet
+[0mCheck: CKV_AZURE_135: "Ensure Application Gateway WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell"
+	PASSED for resource: module.perimeter.azurerm_web_application_firewall_policy.main
+	File: \modules\perimeter\main.tf:42-62
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-application-gateway-waf-prevents-message-lookup-in-log4j2
+[0mCheck: CKV_AZURE_122: "Ensure that Application Gateway uses WAF in "Detection" or "Prevention" modes"
+	PASSED for resource: module.perimeter.azurerm_web_application_firewall_policy.main
+	File: \modules\perimeter\main.tf:42-62
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-uses-waf-in-detection-or-prevention-modes
+[0mCheck: CKV_AZURE_219: "Ensure Firewall defines a firewall policy"
+	PASSED for resource: module.perimeter.azurerm_firewall.main
+	File: \modules\perimeter\main.tf:165-181
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-219
+[0mCheck: CKV_AZURE_189: "Ensure that Azure Key Vault disables public network access"
+	PASSED for resource: module.security.azurerm_key_vault.main
+	File: \modules\security\main.tf:6-17
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-189
+[0mCheck: CKV_AZURE_110: "Ensure that key vault enables purge protection"
+	PASSED for resource: module.security.azurerm_key_vault.main
+	File: \modules\security\main.tf:6-17
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-key-vault-enables-purge-protection
+[0mCheck: CKV_AZURE_111: "Ensure that key vault enables soft delete"
+	PASSED for resource: module.security.azurerm_key_vault.main
+	File: \modules\security\main.tf:6-17
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-key-vault-enables-soft-delete
+[0mCheck: CKV_AZURE_42: "Ensure the key vault is recoverable"
+	PASSED for resource: module.security.azurerm_key_vault.main
+	File: \modules\security\main.tf:6-17
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-the-key-vault-is-recoverable
+[0mCheck: CKV_AZURE_137: "Ensure ACR admin account is disabled"
+	PASSED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/bc-azure-137
+[0mCheck: CKV_AZURE_138: "Ensures that ACR disables anonymous pulling of images"
+	PASSED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/ensure-azure-acr-disables-anonymous-image-pulling
+[0mCheck: CKV_AZURE_163: "Enable vulnerability scanning for container images."
+	PASSED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-163
+[0mCheck: CKV_AZURE_139: "Ensure ACR set to disable public networking"
+	PASSED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-acr-is-set-to-disable-public-networking
+[0mCheck: CKV2_AZURE_27: "Ensure Azure AD authentication is enabled for Azure SQL (MSSQL)"
+	PASSED for resource: module.data.azurerm_mssql_server.main
+	File: \main.tf:7-23
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-85
+[0mCheck: CKV2_AZURE_29: "Ensure AKS cluster has Azure CNI networking enabled"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \main.tf:7-49
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-29
+[0mCheck: CKV2_AZURE_25: "Ensure Azure SQL database Transparent Data Encryption (TDE) is enabled"
+	PASSED for resource: module.data.azurerm_mssql_database.main
+	File: \main.tf:26-40
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-25
+[0mCheck: CKV_AZURE_120: "Ensure that Application Gateway enables WAF"
+	PASSED for resource: module.perimeter.azurerm_application_gateway.main
+	File: \main.tf:68-130
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-enables-waf
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.egress
+	File: \main.tf:109-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.perimeter
+	File: \main.tf:23-28
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.bastion
+	File: \main.tf:30-35
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.app
+	File: \main.tf:38-43
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.admin
+	File: \main.tf:117-122
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.messaging
+	File: \main.tf:46-51
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.data
+	File: \main.tf:54-59
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	PASSED for resource: module.network.azurerm_subnet.security
+	File: \main.tf:62-67
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV_AZURE_158: "Ensure Databricks Workspace data plane to control plane communication happens over private link"
+	FAILED for resource: module.analytics.azurerm_databricks_workspace.main
+	File: \modules\analytics\main.tf:31-48
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-databricks-workspace-is-not-public
+[0mCheck: CKV_AZURE_33: "Ensure Storage logging is enabled for Queue service for read, write and delete requests"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-logging-policies/enable-requests-on-storage-logging-for-queue-service
+[0mCheck: CKV_AZURE_206: "Ensure that Storage Accounts use replication"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-206
+[0mCheck: CKV_AZURE_190: "Ensure that Storage blobs restrict public access"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-190
+[0mCheck: CKV_AZURE_244: "Avoid the use of local users for Azure Storage unless necessary"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \modules\analytics\main.tf:51-62
+	Calling File: \main.tf:169-183
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-244
+[0mCheck: CKV_AZURE_6: "Ensure AKS has an API Server Authorized IP Ranges enabled"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-3
+[0mCheck: CKV_AZURE_115: "Ensure that AKS enables private clusters"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-enables-private-clusters
+[0mCheck: CKV_AZURE_227: "Ensure that the AKS cluster encrypt temp disks, caches, and data flows between Compute and Storage resources"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-227
+[0mCheck: CKV_AZURE_226: "Ensure ephemeral disks are used for OS disks"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-226
+[0mCheck: CKV_AZURE_170: "Ensure that AKS use the Paid Sku for its SLA"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-170
+[0mCheck: CKV_AZURE_141: "Ensure AKS local admin account is disabled"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/ensure-azure-kubernetes-service-aks-local-admin-account-is-disabled
+[0mCheck: CKV_AZURE_168: "Ensure Azure Kubernetes Cluster (AKS) nodes should use a minimum number of 50 pods."
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/azr-kubernetes-168
+[0mCheck: CKV_AZURE_232: "Ensure that only critical system pods run on system nodes"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-232
+[0mCheck: CKV_AZURE_172: "Ensure autorotation of Secrets Store CSI Driver secrets for AKS clusters"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-172
+[0mCheck: CKV_AZURE_171: "Ensure AKS cluster upgrade channel is chosen"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-171
+[0mCheck: CKV_AZURE_116: "Ensure that AKS uses Azure Policies Add-on"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-uses-azure-policies-add-on
+[0mCheck: CKV_AZURE_117: "Ensure that AKS uses disk encryption set"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-49
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-uses-disk-encryption-set
+[0mCheck: CKV_AZURE_224: "Ensure that the Ledger feature is enabled on database that requires cryptographic proof and nonrepudiation of data integrity"
+	FAILED for resource: module.data.azurerm_mssql_database.main
+	File: \modules\data\main.tf:26-40
+	Calling File: \main.tf:88-99
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-logging-policies/bc-azure-224
+[0mCheck: CKV_AZURE_136: "Ensure that PostgreSQL Flexible server enables geo-redundant backups"
+	FAILED for resource: module.data.azurerm_postgresql_flexible_server.main
+	File: \modules\data\main.tf:43-60
+	Calling File: \main.tf:88-99
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-azure-postgresql-flexible-server-enables-geo-redundant-backups
+[0mCheck: CKV_AZURE_218: "Ensure Application Gateway defines secure protocols for in transit communication"
+	FAILED for resource: module.perimeter.azurerm_application_gateway.main
+	File: \modules\perimeter\main.tf:68-130
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-218
+[0mCheck: CKV_AZURE_217: "Ensure Azure Application gateways listener that allow connection requests over HTTP"
+	FAILED for resource: module.perimeter.azurerm_application_gateway.main
+	File: \modules\perimeter\main.tf:68-130
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-217
+[0mCheck: CKV_AZURE_220: "Ensure Firewall policy has IDPS mode as deny"
+	FAILED for resource: module.perimeter.azurerm_firewall_policy.main
+	File: \modules\perimeter\main.tf:156-163
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-220
+[0mCheck: CKV_AZURE_216: "Ensure DenyIntelMode is set to Deny for Azure Firewalls"
+	FAILED for resource: module.perimeter.azurerm_firewall.main
+	File: \modules\perimeter\main.tf:165-181
+	Calling File: \main.tf:148-162
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-216
+[0mCheck: CKV_AZURE_109: "Ensure that key vault allows firewall rules settings"
+	FAILED for resource: module.security.azurerm_key_vault.main
+	File: \modules\security\main.tf:6-17
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-key-vault-allows-firewall-rules-settings
+[0mCheck: CKV_AZURE_237: "Ensure dedicated data endpoints are enabled."
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-237
+[0mCheck: CKV_AZURE_166: "Ensure container image quarantine, scan, and mark images verified"
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-166
+[0mCheck: CKV_AZURE_167: "Ensure a retention policy is set to cleanup untagged manifests."
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-167
+[0mCheck: CKV_AZURE_233: "Ensure Azure Container Registry (ACR) is zone redundant"
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-233
+[0mCheck: CKV_AZURE_165: "Ensure geo-replicated container registries to match multi-region container deployments."
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-165
+[0mCheck: CKV_AZURE_164: "Ensures that ACR uses signed/trusted images"
+	FAILED for resource: module.security.azurerm_container_registry.main
+	File: \modules\security\main.tf:20-28
+	Calling File: \main.tf:74-85
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-164
+[0mCheck: CKV2_AZURE_32: "Ensure private endpoint is configured to key vault"
+	FAILED for resource: module.security.azurerm_key_vault.main
+	File: \main.tf:6-17
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-32
+[0mCheck: CKV2_AZURE_45: "Ensure Microsoft SQL server is configured with private endpoint"
+	FAILED for resource: module.data.azurerm_mssql_server.main
+	File: \main.tf:7-23
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-45
+[0mCheck: CKV2_AZURE_57: "Ensure PostgreSQL Flexible Server is configured with private endpoint"
+	FAILED for resource: module.data.azurerm_postgresql_flexible_server.main
+	File: \main.tf:43-60
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-57
+[0mCheck: CKV2_AZURE_40: "Ensure storage account is not configured with Shared Key authorization"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/bc-azure-2-40
+[0mCheck: CKV2_AZURE_47: "Ensure storage account is configured without blob anonymous access"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/bc-azure-2-47
+[0mCheck: CKV2_AZURE_33: "Ensure storage account is configured with private endpoint"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-33
+[0mCheck: CKV2_AZURE_41: "Ensure storage account is configured with SAS expiration policy"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/bc-azure-2-41
+[0mCheck: CKV2_AZURE_38: "Ensure soft-delete is enabled on Azure storage account"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-38
+[0mCheck: CKV2_AZURE_2: "Ensure that Vulnerability Assessment (VA) is enabled on a SQL server by setting a Storage Account"
+	FAILED for resource: module.data.azurerm_mssql_server.main
+	File: \main.tf:7-23
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-vulnerability-assessment-va-is-enabled-on-a-sql-server-by-setting-a-storage-account
+[0mCheck: CKV_AZURE_24: "Ensure that 'Auditing' Retention is 'greater than 90 days' for SQL servers"
+	FAILED for resource: module.data.azurerm_mssql_server.main
+	File: \main.tf:7-23
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-logging-policies/bc-azr-logging-3
+[0mCheck: CKV2_AZURE_1: "Ensure storage for critical data are encrypted with Customer Managed Key"
+	FAILED for resource: module.analytics.azurerm_storage_account.adls
+	File: \main.tf:51-62
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-storage-for-critical-data-are-encrypted-with-customer-managed-key
+[0mCheck: CKV_AZURE_23: "Ensure that 'Auditing' is set to 'On' for SQL servers"
+	FAILED for resource: module.data.azurerm_mssql_server.main
+	File: \main.tf:7-23
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-logging-policies/bc-azr-logging-2
+[0mCheck: CKV2_AZURE_48: "Ensure that Databricks Workspaces enables customer-managed key for root DBFS encryption"
+	FAILED for resource: module.analytics.azurerm_databricks_workspace.main
+	File: \main.tf:31-48
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-48
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	FAILED for resource: module.network.azurerm_subnet.analytics_host
+	File: \main.tf:70-87
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0mCheck: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	FAILED for resource: module.network.azurerm_subnet.analytics_container
+	File: \main.tf:90-107
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0m

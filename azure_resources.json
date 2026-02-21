@@ -1,0 +1,4364 @@
+﻿[
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001_key",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Compute/sshPublicKeys"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001-nsg",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001-vnet",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001-ip",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "NetworkWatcher_koreacentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001354",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001",
+    "RG": "DTLMS_group",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vmdtlmskr001_OsDisk_1_3ff8e98b1119471bb2544ab73b478625",
+    "RG": "DTLMS_GROUP",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "eastus",
+    "Name": "NetworkWatcher_eastus",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "NetworkWatcher_japaneast",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "NetworkWatcher_japanwest",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "NetworkWatcher_southeastasia",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "australiacentral",
+    "Name": "NetworkWatcher_australiacentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "northcentralus",
+    "Name": "NetworkWatcher_northcentralus",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "brazilsouth",
+    "Name": "NetworkWatcher_brazilsouth",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "canadaeast",
+    "Name": "NetworkWatcher_canadaeast",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "westus",
+    "Name": "NetworkWatcher_westus",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "northeurope",
+    "Name": "NetworkWatcher_northeurope",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "uksouth",
+    "Name": "NetworkWatcher_uksouth",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "westus2",
+    "Name": "NetworkWatcher_westus2",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "NetworkWatcher_eastus2",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "centralus",
+    "Name": "NetworkWatcher_centralus",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "australiaeast",
+    "Name": "NetworkWatcher_australiaeast",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "NetworkWatcher_swedencentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "koreasouth",
+    "Name": "NetworkWatcher_koreasouth",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "malaysiawest",
+    "Name": "NetworkWatcher_malaysiawest",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "eastasia",
+    "Name": "NetworkWatcher_eastasia",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "qatarcentral",
+    "Name": "NetworkWatcher_qatarcentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "norwayeast",
+    "Name": "NetworkWatcher_norwayeast",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "qatarcentral",
+    "Name": "dbmanagedidentity",
+    "RG": "databricks-1dt025-managed",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "norwayeast",
+    "Name": "dbmanagedidentity",
+    "RG": "databricks-rg-1dt028_databricks-scpilhbb3wgdi",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "westus3",
+    "Name": "NetworkWatcher_westus3",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "NetworkWatcher_canadacentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "francecentral",
+    "Name": "NetworkWatcher_francecentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "NetworkWatcher_westeurope",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-SE",
+    "RG": "DefaultResourceGroup-SE",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "DefaultWorkspace-koreacentral",
+    "RG": "DefaultResourceGroup-koreacentral",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "unitedstates",
+    "Name": "team7minwon.onmicrosoft.com",
+    "RG": "6ai-team07",
+    "Type": "Microsoft.AzureActiveDirectory/ciamDirectories"
+  },
+  {
+    "Location": "polandcentral",
+    "Name": "NetworkWatcher_polandcentral",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "MoveCollection-ea-krc-krc",
+    "RG": "ResourceMoverRG-eastasia-koreacentral-krc",
+    "Type": "Microsoft.Migrate/moveCollections"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000amlwg9433742880",
+    "RG": "A000-AML-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000amlwg7640389108",
+    "RG": "A000-AML-rg",
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000amlwg2908976269",
+    "RG": "A000-AML-rg",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000amlwg1780662279",
+    "RG": "A000-AML-rg",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "A000-AML-wg",
+    "RG": "A000-AML-rg",
+    "Type": "Microsoft.MachineLearningServices/workspaces"
+  },
+  {
+    "Location": "global",
+    "Name": "Application Insights Smart Detection",
+    "RG": "A000-AML-rg",
+    "Type": "microsoft.insights/actiongroups"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - a000amlwg1780662279",
+    "RG": "A000-AML-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ContainerInsights(DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-SE)",
+    "RG": "DefaultResourceGroup-SE",
+    "Type": "Microsoft.OperationsManagement/solutions"
+  },
+  {
+    "Location": "asiapacific",
+    "Name": "asdsadww.onmicrosoft.com",
+    "RG": "1dt-final-team6",
+    "Type": "Microsoft.AzureActiveDirectory/ciamDirectories"
+  },
+  {
+    "Location": "unitedstates",
+    "Name": "team6megistudy.onmicrosoft.com",
+    "RG": "1dt-final-team6",
+    "Type": "Microsoft.AzureActiveDirectory/ciamDirectories"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "DefaultQueryPack",
+    "RG": "LogAnalyticsDefaultResources",
+    "Type": "microsoft.operationalInsights/querypacks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "A000-ADFDemo",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.DataFactory/factories"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000adftest",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Sql/servers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000adftest/A000-ADFTest_DB",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Sql/servers/databases"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000adftest/master",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Sql/servers/databases"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000storagedemo",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azuredatafactory",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Web/connections"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000adftest2",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Sql/servers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000adftest2/master",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Sql/servers/databases"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a000storage2adls",
+    "RG": "A000-ADFTest_rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westcentralus",
+    "Name": "NetworkWatcher_westcentralus",
+    "RG": "NetworkWatcherRG",
+    "Type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azuremlv26748271501",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azuremlv27034546380",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azuremlv20924488593",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azuremlv24352317345",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azureml_v2",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.MachineLearningServices/workspaces"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - azuremlv24352317345",
+    "RG": "supers2000_azureml_rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "4771bf7c59a64cd88bb9d43a30677304",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbstorage7tszt7typvaya",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-sg",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gw-public-ip",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbmanagedidentity",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "unity-catalog-access-connector",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gateway",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Network/natGateways"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-vnet",
+    "RG": "databricks-rg-databricks-korea-u-4kwxioeifzabq",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azureml_v2/azureml-v2-rbpvm",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.MachineLearningServices/workspaces/batchEndpoints"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "azureml_v2/azureml-v2-rbpvm/v2deploy",
+    "RG": "supers2000_azureml_rg",
+    "Type": "Microsoft.MachineLearningServices/workspaces/batchEndpoints/deployments"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "team4-trade-data",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-databricks",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Databricks/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbmanagedidentity",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "unity-catalog-access-connector",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbstoragelsh3ewsveo2mu",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-sg",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gw-public-ip",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gateway",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Network/natGateways"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-vnet",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-eventhub",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraftstorage",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-databricks",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Databricks/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-2dtfinalteam1-836f",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-function",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-keyvault",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-server",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.DBforPostgreSQL/flexibleServers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-openai",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft_Access_Connector",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-cosmosdb-nosql",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "appsvc_linux_koreacentral_basic",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt009-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt009-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "appsvc_linux_koreacentral",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt040-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt000-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt041-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt002-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt041-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt000-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt028-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt030-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt0200-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt027-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt002-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt028-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt012-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt0200-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt027-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt005-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "appsvc_linux_koreacentral_basic2",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt022",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt038-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "appsvc_linux_koreacentral_basic",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt038-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt001-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt006-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt001-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt006-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt004-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "appsvc_linux_koreacentral_basic3",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt009-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt011-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt026-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt012-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt040-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt013-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt041-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt005-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt030-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt000-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt0200-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt027-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt002-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt014-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt028-webapp",
+    "RG": "appsvc_linux_koreacentral_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt022",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt038-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt006-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt001-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt025",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt004-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt016-webapp",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt025-webapp",
+    "RG": "appsvc_linux_koreacentral",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt001-webapp2",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt001-webapp2",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt001-webapp2",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-miniproject3",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-miniproject3",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt016-miniproject3",
+    "RG": "appsvc_linux_koreacentral_basic2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitorstorageaccount",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt034-az-fnc",
+    "RG": "dt034-az-fnc-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt034azfncrgbf2d",
+    "RG": "dt034-az-fnc-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-dt034azfncrg-8423",
+    "RG": "dt034-az-fnc-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016-simple-az-func",
+    "RG": "3dt016-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt016rg-b056",
+    "RG": "3dt016-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016rg9575",
+    "RG": "3dt016-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016-simple-az-func",
+    "RG": "3dt016-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt034-az-fnc",
+    "RG": "dt034-az-fnc-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - dt034-az-fnc",
+    "RG": "dt034-az-fnc-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt016-simple-az-func",
+    "RG": "3dt016-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-search",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Search/searchServices"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-event-hubs",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016thumbnailsstorage",
+    "RG": "3dt016-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "mythumbnailfunc2026",
+    "RG": "mythumbnailfunc2026",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "mythumbnailfunc2026",
+    "RG": "mythumbnailfunc2026",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - mythumbnailfunc2026",
+    "RG": "mythumbnailfunc2026",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "stazfunc5977",
+    "RG": "rg-azfunc-mission2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "FLEX-my-blob-func-sskang-2306",
+    "RG": "myblobfuncsskang",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "myblobfuncsskang",
+    "RG": "myblobfuncsskang",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "myblobfuncsskang",
+    "RG": "myblobfuncsskang",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "my-blob-func-sskang",
+    "RG": "myblobfuncsskang",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "fa-azfunc-mission2-2430",
+    "RG": "rg-azfunc-mission2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "KoreaCentralLinuxDynamicPlan",
+    "RG": "rg-azfunc-mission2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "fa-azfunc-mission2-2430",
+    "RG": "rg-azfunc-mission2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - myblobfuncsskang",
+    "RG": "myblobfuncsskang",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - fa-azfunc-mission2-2430",
+    "RG": "rg-azfunc-mission2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-deploy-yatch",
+    "RG": "3dt026-sample-deploy2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026sampledeploy280e2",
+    "RG": "3dt026-sample-deploy2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt026sampledeploy2-a358",
+    "RG": "3dt026-sample-deploy2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-deploy-yatch",
+    "RG": "3dt026-sample-deploy2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt026-deploy-yatch",
+    "RG": "3dt026-sample-deploy2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt016-solar-hubs-ns",
+    "RG": "3dt016-solar-hubs-resource-group",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt014-solar-hub-rg",
+    "RG": "3dt014-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt3040-solar-hubs-ns",
+    "RG": "3dt040-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt3011-solar-hubs-ns",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "tlstjr3dt001-solar-hubs-ns",
+    "RG": "3dt001-solar-hubs.rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "canadaeast",
+    "Name": "dt013-solar-hub-ns",
+    "RG": "3dt013-solar-hubs-resource-grouop",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt026-solar-hub-ns",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt3022-solar-hubs-ns",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt007-solar-hubs-rg",
+    "RG": "3dt007-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-2dtfinalteam3-87cd",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-fa-eventhub-consumer",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-fa-eventh-id-9903",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vnet-koreacentral",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-databricks",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Databricks/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "unity-catalog-access-connector",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbstoragez6l7bgr36ns3m",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbmanagedidentity",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gw-public-ip",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-sg",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gateway",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Network/natGateways"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-vnet",
+    "RG": "databricks-rg-2dt-final-databricks-fc32lndwksc76",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dteam2adls",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt-final-api-management",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.ApiManagement/service"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt-team2-eh",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-access-connector",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-ai-search",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Search/searchServices"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-psql",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.DBforPostgreSQL/flexibleServers"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "managedEnvironment-2dtfinalteam2-89322dt-final-team2Oidc",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workspace2dtfinalteam28603",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "managedEnvironment-2dtfinalteam2-8932",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.App/managedEnvironments"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-container-app",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.App/containerApps"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "builderc3974",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.App/builders"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-fa-eventhub-consumer",
+    "RG": "2dt-final-team3",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - avitor-fa-eventhub-consumer",
+    "RG": "2dt-final-team3",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-simple-az-func20260206157",
+    "RG": "3dt016-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt016solarpredictschedulerrg-97fc",
+    "RG": "3dt016-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016solarpredictsb0aa",
+    "RG": "3dt016-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt016-simple-az-func",
+    "RG": "3dt016-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-ai-search",
+    "RG": "2dt-final-team3",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011solarhubsrg9962",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011-solar",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt011solarhubsrg-897a",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt040solarpredicts8030",
+    "RG": "3dt040-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt040solarpredictschedulerrg-9057",
+    "RG": "3dt040-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt040-solar-pridict-scheduler",
+    "RG": "3dt040-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013solarpredictsbf57",
+    "RG": "3dt013-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013-solar-az-fnc",
+    "RG": "3dt013-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt013solarpredictschedulerrg-b960",
+    "RG": "3dt013-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt005-solar-predict-scheduler",
+    "RG": "3dt005-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt005solarpredicts8798",
+    "RG": "3dt005-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt005solarpredictschedulerrg-9292",
+    "RG": "3dt005-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt005-solar-predict-scheduler",
+    "RG": "3dt005-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026solarhubsrg87df",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-solar-hubs",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt026solarhubsrg-bbdd",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011-solar",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-solar-hubs",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt040-solar-pridict-scheduler",
+    "RG": "3dt040-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013-solar-az-fnc",
+    "RG": "3dt013-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt016-simple-az-func20260206157",
+    "RG": "3dt016-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - avitor-ai-search",
+    "RG": "2dt-final-team3",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt011-solar",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt040-solar-pridict-scheduler",
+    "RG": "3dt040-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt013-solar-az-fnc",
+    "RG": "3dt013-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt005-solar-predict-scheduler",
+    "RG": "3dt005-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt026-solar-hubs",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt022solarhubsrg82f1",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt022-solar-hubs-func",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt022solarhubsrg-9f72",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt022-solar-hubs-func",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-tlstjr3dt001solarfunc-87e0",
+    "RG": "tlstjr3dt001-solar-func",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "tlstjr3dt001-solar-func",
+    "RG": "tlstjr3dt001-solar-func",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "tlstjr3dt001solarfua221",
+    "RG": "tlstjr3dt001-solar-func",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "tlstjr3dt001-solar-func",
+    "RG": "tlstjr3dt001-solar-func",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "solar-predict-practice",
+    "RG": "3dt020-practice2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt020practice2-8203",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt020practice2919b",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "solar-predict-practice",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt022-solar-hubs-func",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - tlstjr3dt001-solar-func",
+    "RG": "tlstjr3dt001-solar-func",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - solar-predict-practice",
+    "RG": "3dt020-practice2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "practice-solar",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbstoragelsh3ewsveo2mu-d5bdc3a9-a283-48c2-9c8e-7aecb0d4ed6b",
+    "RG": "avitor-databricks-managed-rg",
+    "Type": "Microsoft.EventGrid/systemTopics"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-log-analytics-workspace",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-team2-aoai",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dt016-sa-job",
+    "RG": "3dt016-solar-hubs-resource-group",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014-sa-job",
+    "RG": "3dt014-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt011-sa-job",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt040-sa-job",
+    "RG": "3dt040-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt001-sa-job",
+    "RG": "3dt001-solar-hubs.rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt013-sa-job",
+    "RG": "3dt013-solar-hubs-resource-grouop",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt034-sa-jab",
+    "RG": "3dt034-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt026-sa-job",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt034-solar-hub-ns",
+    "RG": "3dt034-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-logicapp",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Logic/workflows"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "office365",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/connections"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "office365-1",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/connections"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt022-sa-job",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-az-func",
+    "RG": "3dt034-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt034solarpredictschedulerrg-8516",
+    "RG": "3dt034-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034solarpredictsa730",
+    "RG": "3dt034-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-az-func",
+    "RG": "3dt034-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt034-az-func",
+    "RG": "3dt034-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt014solarpredictschedulerrg-bb71",
+    "RG": "3dt014-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014-simple-az-fcnc",
+    "RG": "3dt014-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014solarpredictsb764",
+    "RG": "3dt014-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt014-simple-az-fcnc",
+    "RG": "3dt014-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt014-simple-az-fcnc",
+    "RG": "3dt014-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "kafka-ssh-key",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Compute/sshPublicKeys"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "kafka-1-nsg",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vnet-koreacentral-1",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nsg-kafka-cluster",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dteam2adls-b97ff921-3dc9-4266-a94d-53f71d9065a1",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.EventGrid/systemTopics"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-keyvault",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt025solarpredictschedulerrg2-80cf",
+    "RG": "3dt025-solar-predict-scheduler-rg2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-simple-az-fnc2",
+    "RG": "3dt025-solar-predict-scheduler-rg2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025solarpredicts9254",
+    "RG": "3dt025-solar-predict-scheduler-rg2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-simple-az-fnc2",
+    "RG": "3dt025-solar-predict-scheduler-rg2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt025-simple-az-fnc2",
+    "RG": "3dt025-solar-predict-scheduler-rg2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbw-nsc-platform-dev",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Databricks/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbstoragenww2gohb4m2fa",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gw-public-ip",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-sg",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "dbmanagedidentity",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "unity-catalog-access-connector",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "nat-gateway",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/natGateways"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "workers-vnet",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-BackEnd-VM-nsg",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-BackEnd-VM-ip",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vnet-koreacentral-2",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-backend-vm278_z1",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-BackEnd-VM",
+    "RG": "2dt-final-team3",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "avitor-BackEnd-VM_OsDisk_1_80bc264c44a342b6ac5103ba113677f1",
+    "RG": "2DT-FINAL-TEAM3",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink-ip",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink269",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink_OsDisk_1_a4348cb1657a4be58f118f47449e0e53",
+    "RG": "2DT-FINAL-TEAM4",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "shutdown-computevm-flink",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.DevTestLab/schedules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink/AADSSHLoginForLinux",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Compute/virtualMachines/extensions"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "flink/HealthExtension",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Compute/virtualMachines/extensions"
+  },
+  {
+    "Location": "global",
+    "Name": "signalcraft-acs",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Communication/CommunicationServices"
+  },
+  {
+    "Location": "global",
+    "Name": "signalcraft-ecs/AzureManagedDomain",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Communication/EmailServices/Domains"
+  },
+  {
+    "Location": "global",
+    "Name": "signalcraft-ecs",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Communication/EmailServices"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dtfinalteam4storagetest",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "team4-txlookup-ac-2dt026-test",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.Databricks/accessConnectors"
+  },
+  {
+    "Location": "eastus",
+    "Name": "signalcraft-apptesting",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.LoadTestService/loadtests"
+  },
+  {
+    "Location": "eastus",
+    "Name": "team2-governance-function",
+    "RG": "2dt-final-team2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus",
+    "Name": "ASP-2dtfinalteam2-a953",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus",
+    "Name": "2dtfinalteam2b86b",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "team2-governance-function",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-function",
+    "RG": "2dt-final-team1",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - team2-governance-function",
+    "RG": "2dt-final-team2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - signalcraft-function",
+    "RG": "2dt-final-team1",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-backend-vm-ip",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-backend-vm-nsg",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vnet-koreacentral-3",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-backend-vm381_z1",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-backend-vm",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-backend-vm_OsDisk_1_4ce45375b07e49e38747b02f20fdb3ab",
+    "RG": "2DT-FINAL-TEAM2",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-stream-analytics",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-functionapp",
+    "RG": "2dt-final-team1",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "centralindia",
+    "Name": "workspace-3dt005-webapp",
+    "RG": "appsvc_linux_centralindia_basic",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "centralindia",
+    "Name": "3dt005-webapp",
+    "RG": "appsvc_linux_centralindia_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt005-webapp",
+    "RG": "appsvc_linux_centralindia_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "centralindia",
+    "Name": "dt005-solar-hubs-ns",
+    "RG": "3dt005-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt005-sa-job",
+    "RG": "3dt005-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt005-cosmosdb",
+    "RG": "3dt005-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt005-azoai",
+    "RG": "3dt005-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "DefaultWorkspace-japaneast",
+    "RG": "DefaultResourceGroup-japaneast",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "appsvc_linux_japaneast_basic",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-webapp",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-webapp",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt012-webapp",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-webapp2",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt012-webapp2",
+    "RG": "appsvc_linux_japaneast_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "dt012-solar-hub-ns",
+    "RG": "3dt012-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-simple-az-func",
+    "RG": "3dt012-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "ASP-3dt012solarpredictschedulerrg-af7b",
+    "RG": "3dt012-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012solarpredicts9b41",
+    "RG": "3dt012-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-simple-az-func",
+    "RG": "3dt012-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt012-simple-az-func",
+    "RG": "3dt012-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-sa-job",
+    "RG": "3dt012-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-cosmosdb",
+    "RG": "3dt012-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-azoai",
+    "RG": "3dt012-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-solar-predict-cosmosdb-rag-fc",
+    "RG": "3dt012-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012solarpredictcbe42",
+    "RG": "3dt012-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "ASP-3dt012solarpredictcosmosdbragrg-82a6",
+    "RG": "3dt012-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "3dt012-solar-predict-cosmosdb-rag-fc",
+    "RG": "3dt012-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt012-solar-predict-cosmosdb-rag-fc",
+    "RG": "3dt012-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "teacher2a",
+    "RG": "VisualStudioOnline-252DD2D977F94F6DBD74D58EE160E71D",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt028",
+    "RG": "VisualStudioOnline-202CBA5F962843759C5606E1E9FE966B",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt004",
+    "RG": "VisualStudioOnline-08441D4E45C74D6D8870D0EC0D389C08",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt014",
+    "RG": "VisualStudioOnline-05043879506E46568FD4109C6AC77220",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "fabric-lab",
+    "RG": "VisualStudioOnline-7153A737F37B402884608E5C02E68C53",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt005",
+    "RG": "VisualStudioOnline-444D78116CBD43EA8B0EF56C23902096",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt001",
+    "RG": "VisualStudioOnline-E561259B1B834236A7652729D0AB2BC7",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt003",
+    "RG": "VisualStudioOnline-E69D1801BF514594810E208C81E4CF12",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt012",
+    "RG": "VisualStudioOnline-1F76AE8780964EF0A179B81D0E374153",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt023",
+    "RG": "VisualStudioOnline-FD647EFDEB804EA6ADDA64D9968735A7",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt031",
+    "RG": "VisualStudioOnline-21ECDE2E426D40D484F3BB3DAEC9D879",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt002",
+    "RG": "VisualStudioOnline-4AA8DDBF61CD4076834735FDD17A531A",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt006",
+    "RG": "VisualStudioOnline-D86CD334B4A441D3B5FE0D3C1B55404A",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt027",
+    "RG": "VisualStudioOnline-A4D867941C6F4444B28C43ED9A15522C",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt030",
+    "RG": "VisualStudioOnline-E851B9CA6F2C458A9D75266134D77AFA",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt021",
+    "RG": "VisualStudioOnline-1E05C3D03D1B4D0290029F400B159D55",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt0272",
+    "RG": "VisualStudioOnline-79A6D2AD23D348C482B3F66ACE77CEB6",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt009",
+    "RG": "VisualStudioOnline-5BBC5D53BA614E57BA2CAA3F13EBF4C8",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "teacher22dt",
+    "RG": "VisualStudioOnline-C43F8C2328824FA597CFD5B96B34CE6C",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt013",
+    "RG": "VisualStudioOnline-7BD1421F0B0C450AB9A5CEF49E07507F",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt016",
+    "RG": "VisualStudioOnline-79369AAB365842729A933BC1C9978472",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt008-namhae",
+    "RG": "VisualStudioOnline-556613A9628849199945C1DA781F476F",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "2dt022",
+    "RG": "VisualStudioOnline-BE435B98AB0445D091FDF06C3D9BFCC8",
+    "Type": "microsoft.visualstudio/account"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "appsvc_linux_southeastasia_basic",
+    "RG": "appsvc_linux_southeastasia_basic",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "workspace-3dt022-webapp",
+    "RG": "appsvc_linux_southeastasia_basic",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "3dt022-webapp",
+    "RG": "appsvc_linux_southeastasia_basic",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "southeastasia",
+    "Name": "3dt022-webapp",
+    "RG": "appsvc_linux_southeastasia_basic",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt022-webapp",
+    "RG": "appsvc_linux_southeastasia_basic",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus2",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-WUS2",
+    "RG": "DefaultResourceGroup-WUS2",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "westus2",
+    "Name": "appsvc_linux_westus2",
+    "RG": "appsvc_linux_westus2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt004-webapp",
+    "RG": "appsvc_linux_westus2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt004-webapp",
+    "RG": "appsvc_linux_westus2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt004-webapp",
+    "RG": "appsvc_linux_westus2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt004-webapp2",
+    "RG": "appsvc_linux_westus2",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt004-webapp2",
+    "RG": "appsvc_linux_westus2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt004-solar-hubs-ns",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt027-solar-hub-ns",
+    "RG": "3dt027-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt327-simple-az-fnc",
+    "RG": "dt327-simple-az-fnc-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "westus2",
+    "Name": "ASP-dt327simpleazfncrg-8540",
+    "RG": "dt327-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt327simpleazfncrg99db",
+    "RG": "dt327-simple-az-fnc-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt327-simple-az-fnc",
+    "RG": "dt327-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002-az-func",
+    "RG": "3dt002-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt002solarpredictschedulerrg-8c66",
+    "RG": "3dt002-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002solarpredicts94a4",
+    "RG": "3dt002-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002-az-func",
+    "RG": "3dt002-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - dt327-simple-az-fnc",
+    "RG": "dt327-simple-az-fnc-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt002-az-func",
+    "RG": "3dt002-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "ASP-3dt004solarhubsrg-b9e5",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt004-func",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt004solarhubsrg834a",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt004-func",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt004-func",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt004-sa-job",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt028-sa-job",
+    "RG": "3dt027-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt327-sa-job",
+    "RG": "3dt027-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt004-cosmosdb",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt004-azoai",
+    "RG": "3dt004-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dbmanagedidentity",
+    "RG": "1dt048-databricks-managed",
+    "Type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-OS",
+    "RG": "DefaultResourceGroup-OS",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "appsvc_linux_japanwest",
+    "RG": "appsvc_linux_japanwest",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "3dt025-webapp2",
+    "RG": "appsvc_linux_japanwest",
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "3dt025-webapp2",
+    "RG": "appsvc_linux_japanwest",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt025-webapp2",
+    "RG": "appsvc_linux_japanwest",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "japanwest",
+    "Name": "dt025-solar-hubs-ns",
+    "RG": "3dt025-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt025-sa-job",
+    "RG": "3dt025-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-cosmosdb",
+    "RG": "3dt025-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt025-azopi",
+    "RG": "3dt025-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "DefaultWorkspace-eastus2",
+    "RG": "DefaultResourceGroup-eastus2",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "MoveCollection-ea-eus-eus2",
+    "RG": "ResourceMoverRG-eastasia-eastus-eus2",
+    "Type": "Microsoft.Migrate/moveCollections"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034storagethumbnail",
+    "RG": "3dt034-thumbnail-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-blobtrigger",
+    "RG": "3dt034-thumbnail-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt034thumbnailrg-8b71",
+    "RG": "3dt034-thumbnail-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-blobtrigger",
+    "RG": "3dt034-thumbnail-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt034-blobtrigger",
+    "RG": "3dt034-thumbnail-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt017-solar-hub-ns",
+    "RG": "3dt017-solar-hubs-resource-group",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt3009-solar-hubs-ns",
+    "RG": "3dt009-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt017solarpredictschedulerrg-8437",
+    "RG": "3dt017-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt017-simple-az-fnc",
+    "RG": "3dt017-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt017solarpredictsa4c4",
+    "RG": "3dt017-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt017-simple-az-fnc",
+    "RG": "3dt017-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt017-simple-az-fnc",
+    "RG": "3dt017-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-simple-az-func",
+    "RG": "3dt009-solar-predict-schedular-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt009solarpredictschedularrg-a7ff",
+    "RG": "3dt009-solar-predict-schedular-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009solarpredicts9318",
+    "RG": "3dt009-solar-predict-schedular-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-simple-az-func",
+    "RG": "3dt009-solar-predict-schedular-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt009-simple-az-func",
+    "RG": "3dt009-solar-predict-schedular-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt017simpleazfncrg8985",
+    "RG": "3dt017-simple-az-fnc-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt017-simple-az-fnc",
+    "RG": "3dt017-simple-az-fnc-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt017simpleazfncrg-a92a",
+    "RG": "3dt017-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "dt017-simple-az-fnc",
+    "RG": "3dt017-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - dt017-simple-az-fnc",
+    "RG": "3dt017-simple-az-fnc-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-sa-job",
+    "RG": "3dt009-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt017-sa-job",
+    "RG": "3dt017-solar-hubs-resource-group",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-cosmosdb",
+    "RG": "3dt009-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-azoai",
+    "RG": "3dt009-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt041-solar-predict-cosmosdb-rag",
+    "RG": "3dt041-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt041solarpredictcbaa9",
+    "RG": "3dt041-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt041solarpredictcosmosdbragrg-9c79",
+    "RG": "3dt041-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt041-solar-predict-cosmosdb-rag",
+    "RG": "3dt041-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt041-solar-predict-cosmosdb-rag",
+    "RG": "3dt041-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt005-solar-predict-cosmosdb-rag",
+    "RG": "3dt005-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt005solarpredictcosmosdbragrg-b7b7",
+    "RG": "3dt005-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt005solarpredictc9549",
+    "RG": "3dt005-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt005-solar-predict-cosmosdb-rag",
+    "RG": "3dt005-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-solar-predict-cosmosdb-rag",
+    "RG": "3dt009-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009-solar-predict-cosmosdb-rag",
+    "RG": "3dt009-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt005-solar-predict-cosmosdb-rag",
+    "RG": "3dt005-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt009solarpredictcosmosdbragrg-b398",
+    "RG": "3dt009-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt009solarpredictc860a",
+    "RG": "3dt009-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt009-solar-predict-cosmosdb-rag",
+    "RG": "3dt009-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-EUS",
+    "RG": "DefaultResourceGroup-EUS",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt030-solor-ns",
+    "RG": "3dt030-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt3028-solar-hubs-ns",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus",
+    "Name": "el31-solar-hubs-ns",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt035-sola-hubs-ns",
+    "RG": "3dt035-sola-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030-simple-az-fnc",
+    "RG": "3dt030-solor-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt030solorpredictschedulerrg-b384",
+    "RG": "3dt030-solor-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030solorpredictsa23b",
+    "RG": "3dt030-solor-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030-simple-az-fnc",
+    "RG": "3dt030-solor-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt028-solar-hubs-fuc",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt028solarhubsresourcegroup-8e52",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt028solarhubsreso9c0f",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt028-solar-hubs-fuc",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt035-solar-predict-scheduler-fnc",
+    "RG": "3dt035-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt035solarpredictschedulerrg-b0d1",
+    "RG": "3dt035-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt035solarpredicts96c2",
+    "RG": "3dt035-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt035-solar-predict-scheduler-fnc",
+    "RG": "3dt035-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt030-simple-az-fnc",
+    "RG": "3dt030-solor-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt028-solar-hubs-fuc",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt035-solar-predict-scheduler-fnc",
+    "RG": "3dt035-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus2",
+    "Name": "el31-solar-predict-data-scheduler",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "westus2",
+    "Name": "ASP-el31solarhubsrg-a359",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westus2",
+    "Name": "el31solarhubsrgba24",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "el31-solar-predict-data-scheduler",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - el31-solar-predict-data-scheduler",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030-sa-job",
+    "RG": "3dt030-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt035-sa-job",
+    "RG": "3dt035-sola-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus",
+    "Name": "el31-sa-job",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt028-sa-job",
+    "RG": "3dt028-solar-hubs-resource-group",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "westus2",
+    "Name": "dt030-cosmosdb",
+    "RG": "3dt030-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt035-cosmosdb",
+    "RG": "3dt035-sola-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt030-azoai",
+    "RG": "3dt030-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "japaneast",
+    "Name": "el31-cosmosdb",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt030solarpredictcosmosdbragrg-895b",
+    "RG": "3dt030-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030-solar-predict-cosmosdb-rag",
+    "RG": "3dt030-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030solarpredictca27c",
+    "RG": "3dt030-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt030-solar-predict-cosmosdb-rag",
+    "RG": "3dt030-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt035-azoai",
+    "RG": "3dt035-sola-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt030-solar-predict-cosmosdb-rag",
+    "RG": "3dt030-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "el31-azoai2",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt026-solar-rag-func",
+    "RG": "3dt026-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt026solarpredictcosmosdbragrg-9c16",
+    "RG": "3dt026-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt026solarpredictc85e2",
+    "RG": "3dt026-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt026-solar-rag-func",
+    "RG": "3dt026-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt026-solar-rag-func",
+    "RG": "3dt026-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016-solar-predict-cosmosdb-rag",
+    "RG": "3dt016-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt016solarpredictcosmosdbragrg-b65f",
+    "RG": "3dt016-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016solarpredictcb7b2",
+    "RG": "3dt016-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt016-solar-predict-cosmosdb-rag",
+    "RG": "3dt016-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt004-solar-predict-cosmosdb-rag",
+    "RG": "3dt004-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt004solarpredictcosmosdbragrg-8b24",
+    "RG": "3dt004-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt004solarpredictcbefb",
+    "RG": "3dt004-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt001-solar-predict-cosmosdb-rag",
+    "RG": "3dt001-simple-az-fnc-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt001simpleazfncrg-900e",
+    "RG": "3dt001-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt001simpleazfncrgbf5b",
+    "RG": "3dt001-simple-az-fnc-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt001-solar-predict-cosmosdb-rag",
+    "RG": "3dt001-simple-az-fnc-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt004-solar-predict-cosmosdb-rag",
+    "RG": "3dt004-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "el31-solar-predict-cosmosdb-rag",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-el31solarhubsrg-974f",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "el31solarhubsrga8fc",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "el31-solar-predict-cosmosdb-rag",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt016-solar-predict-cosmosdb-rag",
+    "RG": "3dt016-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt022-solar-predict-cosmosdb-rag",
+    "RG": "3dt022-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "ASP-3dt022solarpredictcosmosdbragrg-af87",
+    "RG": "3dt022-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt022solarpredictcab3a",
+    "RG": "3dt022-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt022-solar-predict-cosmosdb-rag",
+    "RG": "3dt022-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt004-solar-predict-cosmosdb-rag",
+    "RG": "3dt004-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt001-solar-predict-cosmosdb-rag",
+    "RG": "3dt001-simple-az-fnc-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - el31-solar-predict-cosmosdb-rag",
+    "RG": "el31-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt022-solar-predict-cosmosdb-rag",
+    "RG": "3dt022-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "centralus",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-CUS",
+    "RG": "DefaultResourceGroup-CUS",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "centralus",
+    "Name": "DefaultWorkspace-centralus",
+    "RG": "DefaultResourceGroup-centralus",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "centralus",
+    "Name": "solar-hub-rg-3dt041",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "centralus",
+    "Name": "dt002-solar-hubs-rg",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "centralus",
+    "Name": "3dt041-solar-hubs-function",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "centralus",
+    "Name": "ASP-3dt041solarhubrg-9579",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "centralus",
+    "Name": "3dt041solarhubrgb8bc",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "centralus",
+    "Name": "3dt041-solar-hubs-function",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt041-solar-hubs-function",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002-sa-job",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "centralus",
+    "Name": "3dt041-sa-job",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002-solar-hubs",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002solarhubsrg8835",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt002solarhubsrg-ab40",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt002-solar-hubs",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt002-solar-hubs",
+    "RG": "3dt002-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt041-cosmosdb",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt041-azoai",
+    "RG": "3dt041-solar-hub-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-WEU",
+    "RG": "DefaultResourceGroup-WEU",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "dt038-solar-hubs-ns",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-sa-job",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038solarhubsrgb3bf",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "ASP-3dt038solarhubsrg-a2f1",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-solar-hubs-func",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-solar-hubs-func",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt038-solar-hubs-func",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-cosmosdb",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-azoai",
+    "RG": "3dt038-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "ASP-3dt038solarpredictcosmosdbragrg-a42d",
+    "RG": "3dt038-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-solar-predict-cosmosdb-rag",
+    "RG": "3dt038-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038solarpredictc898b",
+    "RG": "3dt038-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westeurope",
+    "Name": "3dt038-solar-predict-cosmosdb-rag",
+    "RG": "3dt038-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt038-solar-predict-cosmosdb-rag",
+    "RG": "3dt038-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-SEC",
+    "RG": "DefaultResourceGroup-SEC",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "dt006-solor-hubs-ns",
+    "RG": "3dt006-solar-hubs-rg",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-solar-predict-scheduler-fnc",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "ASP-3dt006solarpredictschedulerrg-a7e4",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006solarpredicts9095",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-solar-predict-scheduler-fnc",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt006-solar-predict-scheduler-fnc",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-sa-job",
+    "RG": "3dt006-solar-predict-scheduler-rg",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-azoai",
+    "RG": "3dt006-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-cosmosdb",
+    "RG": "3dt006-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3t006-solar-predict-cosmosdb-rag",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "ASP-3dt006solarpredictcosmosdbragrg-99bf",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006solarpredictcb949",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3t006-solar-predict-cosmosdb-rag",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-solar-predict-cosmosdb-rag",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "ASP-3dt006solarpredictcosmosdbragrg-9c92",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006solarpredictcbd4c",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "swedencentral",
+    "Name": "3dt006-solar-predict-cosmosdb-rag",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt006-solar-predict-cosmosdb-rag",
+    "RG": "3dt006-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "simname",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "test019",
+    "RG": "3dt019_0206",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt019020695e5",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-3dt0190206-aa8a",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "test019",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - test019",
+    "RG": "3dt019_0206",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "sim_stream",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.StreamAnalytics/streamingjobs"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "simcosmos",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "sim-azoai",
+    "RG": "3dt019_0206",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "ASP-3dt011solarpredictcosmosdbragrg-a7e4",
+    "RG": "3dt011-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt011solarpredictcad92",
+    "RG": "3dt011-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt011-solar-predict-cosmosdb-rag",
+    "RG": "3dt011-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt011-solar-predict-cosmosdb-rag",
+    "RG": "3dt011-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt011-solar-predict-cosmosdb-rag",
+    "RG": "3dt011-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "westus",
+    "Name": "jhleeAzureSQLServerVM-nsg",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "westus",
+    "Name": "jhleeAzureSQLServerVM-ip",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "westus",
+    "Name": "jhleeAzureSQLServerVM-vnet",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "westus",
+    "Name": "jhleeazuresqlservervm996",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "global",
+    "Name": "privatelink.database.windows.net",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Network/privateDnsZones"
+  },
+  {
+    "Location": "westus",
+    "Name": "jhleeasa010",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "global",
+    "Name": "jhlee-db-cpu",
+    "RG": "jhlee-sqlvm",
+    "Type": "microsoft.insights/metricalerts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "databricks-korea-u",
+    "RG": "jhlee-sqlvm",
+    "Type": "Microsoft.Databricks/workspaces"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-CCAN",
+    "RG": "DefaultResourceGroup-CCAN",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt013-solar-predict-cosmosdb-rag",
+    "RG": "3dt013-solar-predict-cosmosdb-rag_group",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt013solarpredictcb78f",
+    "RG": "3dt013-solar-predict-cosmosdb-rag_group",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "ASP-3dt013solarpredictcosmosdbraggr-9c59",
+    "RG": "3dt013-solar-predict-cosmosdb-rag_group",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt013-solar-predict-cosmosdb-rag",
+    "RG": "3dt013-solar-predict-cosmosdb-rag_group",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt013-solar-predict-cosmosdb-rag",
+    "RG": "3dt013-solar-predict-cosmosdb-rag_group",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastasia",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-EA",
+    "RG": "DefaultResourceGroup-EA",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "practice-3dt020",
+    "RG": "practice_3dt020",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "ASP-practice3dt020-9784",
+    "RG": "practice_3dt020",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "practice3dt020889a",
+    "RG": "practice_3dt020",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "practice-3dt020",
+    "RG": "practice_3dt020",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - practice-3dt020",
+    "RG": "practice_3dt020",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt020thumbnail",
+    "RG": "practice_3dt020",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "dt020-solar-hub-rg",
+    "RG": "practice_3dt020",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "australiaeast",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-EAU",
+    "RG": "DefaultResourceGroup-EAU",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "australiacentral",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-CAU",
+    "RG": "DefaultResourceGroup-CAU",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "westus3",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-USW3",
+    "RG": "DefaultResourceGroup-USW3",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "brazilsouth",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-CQ",
+    "RG": "DefaultResourceGroup-CQ",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "ukwest",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-WUK",
+    "RG": "DefaultResourceGroup-WUK",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "newzealandnorth",
+    "Name": "DefaultWorkspace-27db5ec6-d206-4028-b5e1-6004dca5eeef-NZN",
+    "RG": "DefaultResourceGroup-NZN",
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-2dtfinalteam1-a407",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-functionapp",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - signalcraft-functionapp",
+    "RG": "2dt-final-team1",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt022-cosmosdb",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt022-azoai",
+    "RG": "3dt022-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "gitjabi-eventhub-ns",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.EventHub/namespaces"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt014-cosmosdb",
+    "RG": "3dt014-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt011-cosmosdb",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt026-cosmosdb",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt034-cosmosdb",
+    "RG": "3dt034-solar-hubs-rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt016-cosmosdb",
+    "RG": "3dt016-solar-hubs-resource-group",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt013-cosmosdb1",
+    "RG": "3dt013-solar-hubs-resource-grouop",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt001-cosmosdb",
+    "RG": "3dt001-solar-hubs.rg",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "westus2",
+    "Name": "3dt020-cosmodb",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.DocumentDb/databaseAccounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt013-azoai",
+    "RG": "3dt013-solar-hubs-resource-grouop",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "westus",
+    "Name": "3dt014-azoai",
+    "RG": "3dt014-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt020-azoai",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt026-azoai",
+    "RG": "3dt026-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus",
+    "Name": "3dt001-azoai",
+    "RG": "3dt001-solar-hubs.rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "westus",
+    "Name": "3dt011-openai",
+    "RG": "3dt011-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "3dt034--azoai",
+    "RG": "3dt034-solar-hubs-rg",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt025-solar-predict-cosmosdb-rag",
+    "RG": "3dt025-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt025solarpredictcosmosdbragrg-a395",
+    "RG": "3dt025-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt025solarpredictc8975",
+    "RG": "3dt025-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt025-solar-predict-cosmosdb-rag",
+    "RG": "3dt025-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "simsolarpredictcosmb1ab",
+    "RG": "sim-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "sim-solar-predict-cosmosdb-rag-fn",
+    "RG": "sim-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-simsolarpredictcosmosdbragrg-bf4c",
+    "RG": "sim-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "sim-solar-predict-cosmosdb-rag-fn",
+    "RG": "sim-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034solarpredictc8fac",
+    "RG": "3dt034-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-solar-predict-cosmosdb-rag",
+    "RG": "3dt034-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "ASP-3dt034solarpredictcosmosdbragrg-b6c1",
+    "RG": "3dt034-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt025-solar-predict-cosmosdb-rag",
+    "RG": "3dt025-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "eastus2",
+    "Name": "3dt034-solar-predict-cosmosdb-rag",
+    "RG": "3dt034-solar-predict-cosmosdb-rag-rg",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - sim-solar-predict-cosmosdb-rag-fn",
+    "RG": "sim-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 3dt034-solar-predict-cosmosdb-rag",
+    "RG": "3dt034-solar-predict-cosmosdb-rag-rg",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "dt020-cosmosdb-rag",
+    "RG": "3dt020-practice2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "ASP-3dt020practice2-bc29",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "3dt020practice283f8",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Location": "canadacentral",
+    "Name": "dt020-cosmosdb-rag",
+    "RG": "3dt020-practice2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "eastus",
+    "Name": "dt016-azoai",
+    "RG": "3dt016-solar-hubs-resource-group",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - dt020-cosmosdb-rag",
+    "RG": "3dt020-practice2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a0d0e3726a5a47fdaba1b4a909671a62-0-scratchVolume",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a0d0e3726a5a47fdaba1b4a909671a62-publicNIC",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a0d0e3726a5a47fdaba1b4a909671a62-containerRootVolume",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a0d0e3726a5a47fdaba1b4a909671a62-privateNIC",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "a0d0e3726a5a47fdaba1b4a909671a62",
+    "RG": "DATABRICKS-RG-DBW-NSC-PLATFORM-DEV-KVX575NJS2YC6",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm-ip",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm-nsg",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "vnet-koreacentral-4",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm911_z1",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm_OsDisk_1_721a921ced7242c2ba0bc29a28b8e365",
+    "RG": "2DT-FINAL-TEAM1",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "signalcraft-vm/enablevmAccess",
+    "RG": "2dt-final-team1",
+    "Type": "Microsoft.Compute/virtualMachines/extensions"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-team4-aoai",
+    "RG": "2dt-final-team4",
+    "Type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "ASP-2dtfinalteam2-ad44",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-team2-meeting-video-downloader",
+    "RG": "2dt-final-team2",
+    "Type": "microsoft.insights/components"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "2dt-final-team2-meeting-video-downloaderFA",
+    "RG": "2dt-final-team2",
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Location": "global",
+    "Name": "Failure Anomalies - 2dt-final-team2-meeting-video-downloader",
+    "RG": "2dt-final-team2",
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "c9b05b796a44403d94ad228c58f8f4ce-0-scratchVolume",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "c9b05b796a44403d94ad228c58f8f4ce-containerRootVolume",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Compute/disks"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "c9b05b796a44403d94ad228c58f8f4ce-privateNIC",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "c9b05b796a44403d94ad228c58f8f4ce-publicNIC",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "Location": "koreacentral",
+    "Name": "c9b05b796a44403d94ad228c58f8f4ce",
+    "RG": "databricks-rg-dbw-nsc-platform-dev-kvx575njs2yc6",
+    "Type": "Microsoft.Compute/virtualMachines"
+  }
+]

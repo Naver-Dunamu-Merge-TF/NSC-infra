@@ -1,131 +1,224 @@
 # =============================================================================
-# Enterprise Platform - Terraform Configuration (Modularized)
+# NSC Platform — Root Configuration (All Phases)
+# Source of Truth: README.md (Architecture Manual v02)
 # =============================================================================
 
-# 1. Provider Configuration
 terraform {
-  required_version = ">= 1.0.0"
-  
+  required_version = ">= 1.5.0"                        # Terraform 최소 버전
+
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
+      source  = "hashicorp/azurerm"                     # Azure RM 프로바이더
+      version = "~> 3.80"                               # 3.80 이상 4.0 미만
     }
     random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"
+      source  = "hashicorp/random"                      # 랜덤 문자열 생성용
+      version = "~> 3.0"                                # Storage/ACR suffix
     }
   }
 }
 
 provider "azurerm" {
-  features {}
+  features {}                                           # 필수 블록
 }
 
-# Random suffix for globally unique names
+# 글로벌 유니크 이름용 suffix (§7.4: Storage Account, ACR만 사용)
 resource "random_string" "suffix" {
-  length  = 6
-  special = false
-  upper   = false
+  length  = 6                                           # 6자리
+  special = false                                       # 특수문자 제외
+  upper   = false                                       # 소문자만
 }
 
-# 2. Resource Group
-resource "azurerm_resource_group" "main" {
-  name     = "rg-enterprise-platform"
-  location = "Korea Central"
+# Resource Group — 기존 RG 참조 (교육 환경: 신규 RG 생성 권한 없음)
+data "azurerm_resource_group" "main" {
+  name = "2dt-final-team4"
 }
 
-data "azurerm_client_config" "current" {}
+data "azurerm_client_config" "current" {}               # tenant_id, object_id 참조
 
 # =============================================================================
-# Module Calls
+# Phase 1: Foundation
 # =============================================================================
 
-# 10-11. Monitoring (Log Analytics, App Insights)
-module "monitoring" {
-  source              = "./modules/monitoring"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  suffix              = random_string.suffix.result
-}
-
-# 3-4. Network (VNet, Subnets, NSGs, DNS)
+# Network — VNet + 10 Subnets + NSG + UDR (§2.5, §4.1, §4.2, §7.2)
 module "network" {
-  source              = "./modules/network"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  source = "./modules/network"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix              # nsc
+  environment         = var.environment                 # dev
+  vnet_cidr           = var.vnet_cidr                   # 10.0.0.0/16
+  subnet_cidrs        = var.subnet_cidrs                # 서브넷 CIDR 맵
+  tags                = var.tags
 }
 
-# 5. Compute (AKS)
-module "compute" {
-  source                     = "./modules/compute"
-  resource_group_name        = azurerm_resource_group.main.name
-  location                   = azurerm_resource_group.main.location
-  aks_subnet_id              = module.network.aks_subnet_id
-  log_analytics_workspace_id = module.monitoring.log_analytics_workspace_id
+# Monitoring — Log Analytics + App Insights (§7.1)
+module "monitoring" {
+  source = "./modules/monitoring"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  environment         = var.environment
+  tags                = var.tags
 }
 
-# 6. Messaging (Event Hubs)
-module "messaging" {
-  source              = "./modules/messaging"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  suffix              = random_string.suffix.result
-}
+# =============================================================================
+# Phase 2: Core Services
+# =============================================================================
 
-# 7, 12. Security (Key Vault, ACR)
+# Security — Key Vault + ACR + Private DNS Zones (§5.2, §4.3)
 module "security" {
-  source              = "./modules/security"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  suffix              = random_string.suffix.result
+  source = "./modules/security"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  environment         = var.environment
+  suffix              = random_string.suffix.result      # ACR suffix
   tenant_id           = data.azurerm_client_config.current.tenant_id
+  vnet_id             = module.network.vnet_id           # DNS Zone VNet Link
+  tags                = var.tags
 }
 
-# 8, 13-16. Data (SQL, PostgreSQL, Data Lake Storage, Databricks, Confidential Ledger)
+# Data — SQL DB + PostgreSQL + Confidential Ledger (§7.1)
 module "data" {
-  source              = "./modules/data"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  suffix              = random_string.suffix.result
+  source = "./modules/data"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  environment         = var.environment
   tenant_id           = data.azurerm_client_config.current.tenant_id
   current_object_id   = data.azurerm_client_config.current.object_id
+  pg_admin_password   = var.pg_admin_password            # tfvars 또는 환경변수
+  tags                = var.tags
 }
 
-# 17-19. Perimeter (Bastion, Firewall, App Gateway + WAF)
-module "perimeter" {
-  source              = "./modules/perimeter"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  bastion_subnet_id   = module.network.bastion_subnet_id
-  firewall_subnet_id  = module.network.firewall_subnet_id
-  appgw_subnet_id     = module.network.appgw_subnet_id
+# Private Endpoints — 7개 PE (§4.3)
+module "private_endpoints" {
+  source = "./modules/private_endpoints"
+
+  resource_group_name    = data.azurerm_resource_group.main.name
+  location               = data.azurerm_resource_group.main.location
+  project_prefix         = var.project_prefix
+  subnet_ids             = module.network.subnet_ids     # 서브넷 ID 맵
+  dns_zone_ids           = module.security.dns_zone_ids  # DNS Zone ID 맵
+  sql_server_id          = module.data.sql_server_id
+  postgresql_server_id   = module.data.postgresql_server_id
+  ledger_id              = module.data.ledger_id
+  key_vault_id           = module.security.key_vault_id
+  acr_id                 = module.security.acr_id
+  eventhubs_namespace_id = module.messaging.namespace_id # Phase 3
+  adls_storage_id        = module.analytics.adls_storage_id  # Phase 4
+  tags                   = var.tags
 }
 
-# 20. Diagnostics (Firewall & App Gateway diagnostic settings)
-module "diagnostics" {
-  source                     = "./modules/diagnostics"
-  firewall_id                = module.perimeter.firewall_id
-  appgw_id                   = module.perimeter.appgw_id
+# =============================================================================
+# Phase 3: Compute + Messaging + Perimeter
+# =============================================================================
+
+# Compute — AKS (§7.1)
+module "compute" {
+  source = "./modules/compute"
+
+  resource_group_name        = data.azurerm_resource_group.main.name
+  location                   = data.azurerm_resource_group.main.location
+  project_prefix             = var.project_prefix
+  environment                = var.environment
+  aks_subnet_id              = module.network.subnet_ids["app"]  # Application 서브넷
   log_analytics_workspace_id = module.monitoring.log_analytics_workspace_id
+  tags                       = var.tags
+}
+
+# Messaging — Event Hubs (§7.1)
+module "messaging" {
+  source = "./modules/messaging"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  environment         = var.environment
+  tags                = var.tags
+}
+
+# Perimeter — AppGW + WAF + Bastion + Firewall (§5.3, §7.1)
+module "perimeter" {
+  source = "./modules/perimeter"
+
+  resource_group_name   = data.azurerm_resource_group.main.name
+  location              = data.azurerm_resource_group.main.location
+  project_prefix        = var.project_prefix
+  environment           = var.environment
+  perimeter_subnet_id   = module.network.subnet_ids["perimeter"]  # Perimeter 서브넷
+  bastion_subnet_id     = module.network.subnet_ids["bastion"]    # Bastion 서브넷
+  egress_subnet_id      = module.network.subnet_ids["egress"]     # Firewall 서브넷
+  app_subnet_cidr       = var.subnet_cidrs["app"]                 # FW Rule 소스
+  analytics_subnet_cidr = var.subnet_cidrs["analytics_host"]      # FW Rule 소스
+  vnet_cidr             = var.vnet_cidr                           # Network Rule 소스
+  tags                  = var.tags
+}
+
+# Routing — UDR (§4.2, network↔perimeter 순환 의존성 해소용 독립 모듈)
+module "routing" {
+  source = "./modules/routing"
+
+  resource_group_name = data.azurerm_resource_group.main.name
+  location            = data.azurerm_resource_group.main.location
+  project_prefix      = var.project_prefix
+  firewall_private_ip = module.perimeter.firewall_private_ip  # Firewall 완료 후
+  subnet_ids          = module.network.subnet_ids             # Network 완료 후
+  tags                = var.tags
 }
 
 # =============================================================================
-# Role Assignments (AKS -> ACR, AKS -> Key Vault)
+# Phase 4: Analytics + Diagnostics
 # =============================================================================
 
-# AKS kubelet identity -> ACR: AcrPull (Image Pull)
+# Analytics — Databricks + ADLS Gen2 (§7.1)
+module "analytics" {
+  source = "./modules/analytics"
+
+  resource_group_name             = data.azurerm_resource_group.main.name
+  location                        = data.azurerm_resource_group.main.location
+  project_prefix                  = var.project_prefix
+  environment                     = var.environment
+  suffix                          = random_string.suffix.result
+  vnet_id                         = module.network.vnet_id
+  analytics_host_subnet_id        = module.network.subnet_ids["analytics_host"]
+  analytics_host_subnet_name      = "${var.project_prefix}-snet-analytics-host"
+  analytics_container_subnet_id   = module.network.subnet_ids["analytics_container"]
+  analytics_container_subnet_name = "${var.project_prefix}-snet-analytics-container"
+  tags                            = var.tags
+}
+
+# Diagnostics — 리소스 → LAW 로그 전송 (§6)
+module "diagnostics" {
+  source = "./modules/diagnostics"
+
+  log_analytics_workspace_id = module.monitoring.log_analytics_workspace_id
+  aks_id                     = module.compute.aks_id
+  appgw_id                   = module.perimeter.appgw_id
+  firewall_id                = module.perimeter.firewall_id
+  key_vault_id               = module.security.key_vault_id
+  sql_database_id            = module.data.sql_database_id
+}
+
+# =============================================================================
+# RBAC Role Assignments (§5.1)
+# =============================================================================
+
+# AKS Kubelet → ACR Pull 권한
 resource "azurerm_role_assignment" "aks_acr_pull" {
-  principal_id                     = module.compute.aks_principal_id
-  role_definition_name             = "AcrPull"
-  scope                            = module.security.acr_id
-  skip_service_principal_aad_check = true
+  scope                = module.security.acr_id                        # ACR 스코프
+  role_definition_name = "AcrPull"                       # 이미지 Pull 권한
+  principal_id         = module.compute.kubelet_identity_object_id     # Kubelet MI
 }
 
-# AKS kubelet identity -> Key Vault: Key Vault Secrets User (Secret Retrieval)
-resource "azurerm_role_assignment" "aks_kv_secrets" {
-  principal_id                     = module.compute.aks_principal_id
-  role_definition_name             = "Key Vault Secrets User"
-  scope                            = module.security.key_vault_id
-  skip_service_principal_aad_check = true
+# AKS → Key Vault Secrets Reader
+resource "azurerm_role_assignment" "aks_kv_reader" {
+  scope                = module.security.key_vault_id                  # KV 스코프
+  role_definition_name = "Key Vault Secrets User"        # 시크릿 읽기
+  principal_id         = module.compute.aks_identity_principal_id      # AKS MI
 }

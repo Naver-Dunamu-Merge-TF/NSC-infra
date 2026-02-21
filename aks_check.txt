@@ -1,0 +1,139 @@
+﻿
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.500 
+Update available 3.2.500 -> 3.2.501
+Run pip3 install -U checkov to update 
+
+
+terraform scan results:
+
+Passed checks: 2, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AZURE_172: "Ensure autorotation of Secrets Store CSI Driver secrets for AKS clusters"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-55
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-172
+[0mCheck: CKV_AZURE_116: "Ensure that AKS uses Azure Policies Add-on"
+	PASSED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-55
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-uses-azure-policies-add-on
+[0mCheck: CKV_AZURE_115: "Ensure that AKS enables private clusters"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-55
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-enables-private-clusters
+[0m
+		[37m7  | [33mresource "azurerm_kubernetes_cluster" "main" {
+		[37m8  | [33m  name                = "${var.project_prefix}-aks-${var.environment}"  # nsc-aks-dev
+		[37m9  | [33m  resource_group_name = var.resource_group_name
+		[37m10 | [33m  location            = var.location                      # Korea Central
+		[37m11 | [33m  dns_prefix          = "${var.project_prefix}-aks-${var.environment}"
+		[37m12 | [33m  kubernetes_version  = "1.28"
+		[37m13 | [33m
+		[37m14 | [33m  default_node_pool {
+		[37m15 | [33m    name                = "system"
+		[37m16 | [33m    vm_size             = "Standard_D4s_v3"               # 짠7.1: D4s_v3
+		[37m17 | [33m    node_count          = 3
+		[37m18 | [33m    min_count           = 3
+		[37m19 | [33m    max_count           = 10
+		[37m20 | [33m    enable_auto_scaling = true
+		[37m21 | [33m    vnet_subnet_id      = var.aks_subnet_id
+		[37m22 | [33m    zones               = ["1", "2", "3"]                 # Zone Redundant
+		[37m23 | [33m  }
+		[37m24 | [33m
+		[37m25 | [33m  identity {
+		[37m26 | [33m    type = "SystemAssigned"                               # 짠5.1: Managed Identity
+		[37m27 | [33m  }
+		[37m28 | [33m
+		[37m29 | [33m  oidc_issuer_enabled       = true
+		[37m30 | [33m  workload_identity_enabled = true                        # CKV_AZURE_172: Workload Identity
+		[37m31 | [33m  local_account_disabled    = true                        # CKV_AZURE_115: disable local admin
+		[37m32 | [33m  azure_policy_enabled      = true                        # CKV_AZURE_116: Azure Policy addon
+		[37m33 | [33m
+		[37m34 | [33m  azure_active_directory_role_based_access_control {
+		[37m35 | [33m    managed            = true
+		[37m36 | [33m    azure_rbac_enabled = true
+		[37m37 | [33m  }
+		[37m38 | [33m
+		[37m39 | [33m  network_profile {
+		[37m40 | [33m    network_plugin = "azure"
+		[37m41 | [33m    network_policy = "calico"
+		[37m42 | [33m    service_cidr   = "172.16.0.0/16"
+		[37m43 | [33m    dns_service_ip = "172.16.0.10"
+		[37m44 | [33m  }
+		[37m45 | [33m
+		[37m46 | [33m  oms_agent {
+		[37m47 | [33m    log_analytics_workspace_id = var.log_analytics_workspace_id
+		[37m48 | [33m  }
+		[37m49 | [33m
+		[37m50 | [33m  key_vault_secrets_provider {                             # CKV_AZURE_171: KV Secrets Provider
+		[37m51 | [33m    secret_rotation_enabled = true
+		[37m52 | [33m  }
+		[37m53 | [33m
+		[37m54 | [33m  tags = var.tags
+		[37m55 | [33m}
+
+Check: CKV_AZURE_171: "Ensure AKS cluster upgrade channel is chosen"
+	FAILED for resource: module.compute.azurerm_kubernetes_cluster.main
+	File: \modules\compute\main.tf:7-55
+	Calling File: \main.tf:124-134
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-171
+[0m
+		[37m7  | [33mresource "azurerm_kubernetes_cluster" "main" {
+		[37m8  | [33m  name                = "${var.project_prefix}-aks-${var.environment}"  # nsc-aks-dev
+		[37m9  | [33m  resource_group_name = var.resource_group_name
+		[37m10 | [33m  location            = var.location                      # Korea Central
+		[37m11 | [33m  dns_prefix          = "${var.project_prefix}-aks-${var.environment}"
+		[37m12 | [33m  kubernetes_version  = "1.28"
+		[37m13 | [33m
+		[37m14 | [33m  default_node_pool {
+		[37m15 | [33m    name                = "system"
+		[37m16 | [33m    vm_size             = "Standard_D4s_v3"               # 짠7.1: D4s_v3
+		[37m17 | [33m    node_count          = 3
+		[37m18 | [33m    min_count           = 3
+		[37m19 | [33m    max_count           = 10
+		[37m20 | [33m    enable_auto_scaling = true
+		[37m21 | [33m    vnet_subnet_id      = var.aks_subnet_id
+		[37m22 | [33m    zones               = ["1", "2", "3"]                 # Zone Redundant
+		[37m23 | [33m  }
+		[37m24 | [33m
+		[37m25 | [33m  identity {
+		[37m26 | [33m    type = "SystemAssigned"                               # 짠5.1: Managed Identity
+		[37m27 | [33m  }
+		[37m28 | [33m
+		[37m29 | [33m  oidc_issuer_enabled       = true
+		[37m30 | [33m  workload_identity_enabled = true                        # CKV_AZURE_172: Workload Identity
+		[37m31 | [33m  local_account_disabled    = true                        # CKV_AZURE_115: disable local admin
+		[37m32 | [33m  azure_policy_enabled      = true                        # CKV_AZURE_116: Azure Policy addon
+		[37m33 | [33m
+		[37m34 | [33m  azure_active_directory_role_based_access_control {
+		[37m35 | [33m    managed            = true
+		[37m36 | [33m    azure_rbac_enabled = true
+		[37m37 | [33m  }
+		[37m38 | [33m
+		[37m39 | [33m  network_profile {
+		[37m40 | [33m    network_plugin = "azure"
+		[37m41 | [33m    network_policy = "calico"
+		[37m42 | [33m    service_cidr   = "172.16.0.0/16"
+		[37m43 | [33m    dns_service_ip = "172.16.0.10"
+		[37m44 | [33m  }
+		[37m45 | [33m
+		[37m46 | [33m  oms_agent {
+		[37m47 | [33m    log_analytics_workspace_id = var.log_analytics_workspace_id
+		[37m48 | [33m  }
+		[37m49 | [33m
+		[37m50 | [33m  key_vault_secrets_provider {                             # CKV_AZURE_171: KV Secrets Provider
+		[37m51 | [33m    secret_rotation_enabled = true
+		[37m52 | [33m  }
+		[37m53 | [33m
+		[37m54 | [33m  tags = var.tags
+		[37m55 | [33m}
+
