@@ -14,23 +14,24 @@ permissions:
   contents: read
   pull-requests: write
 
-# ─── 환경 변수 ───
-env:
-  TF_VAR_pg_admin_password: ${{ secrets.PG_ADMIN_PASSWORD }}
-  ARM_CLIENT_ID:            ${{ secrets.AZURE_CLIENT_ID }}
-  ARM_CLIENT_SECRET:        ${{ secrets.AZURE_CLIENT_SECRET }}
-  ARM_SUBSCRIPTION_ID:      ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  ARM_TENANT_ID:            ${{ secrets.AZURE_TENANT_ID }}
-
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ 코드 가져오기
+      # 0️⃣ 코드 가져오기
       - name: 📥 코드 체크아웃
         uses: actions/checkout@v4
+
+      # 1️⃣ Secret에서 공백/줄바꿈 제거 후 환경변수 세팅
+      - name: 🔐 Azure 인증 정보 세팅
+        run: |
+          echo "ARM_CLIENT_ID=$(echo '${{ secrets.AZURE_CLIENT_ID }}' | tr -d '\n\r ')" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(echo '${{ secrets.AZURE_CLIENT_SECRET }}' | tr -d '\n\r ')" >> $GITHUB_ENV
+          echo "ARM_SUBSCRIPTION_ID=$(echo '${{ secrets.AZURE_SUBSCRIPTION_ID }}' | tr -d '\n\r ')" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(echo '${{ secrets.AZURE_TENANT_ID }}' | tr -d '\n\r ')" >> $GITHUB_ENV
+          echo "TF_VAR_pg_admin_password=$(echo '${{ secrets.PG_ADMIN_PASSWORD }}' | tr -d '\n\r ')" >> $GITHUB_ENV
 
       # 2️⃣ Terraform 설치
       - name: 🔧 Terraform 설치
