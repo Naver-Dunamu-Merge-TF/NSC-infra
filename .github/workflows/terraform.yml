@@ -1,0 +1,83 @@
+name: "🚀 Terraform Deploy"
+
+# ─── 언제 실행되나? ───
+on:
+  # main 브랜치에 PR을 올리면 → plan (미리보기만)
+  pull_request:
+    branches: [main]
+  # main 브랜치에 merge(합치기)하면 → apply (실제 배포)
+  push:
+    branches: [main]
+
+# ─── 권한 설정 ───
+permissions:
+  contents: read
+  pull-requests: write
+
+# ─── 환경 변수 ───
+env:
+  TF_VAR_pg_admin_password: ${{ secrets.PG_ADMIN_PASSWORD }}
+  ARM_CLIENT_ID:            ${{ secrets.AZURE_CLIENT_ID }}
+  ARM_CLIENT_SECRET:        ${{ secrets.AZURE_CLIENT_SECRET }}
+  ARM_SUBSCRIPTION_ID:      ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  ARM_TENANT_ID:            ${{ secrets.AZURE_TENANT_ID }}
+
+jobs:
+  terraform:
+    name: "Terraform"
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 코드 가져오기
+      - name: 📥 코드 체크아웃
+        uses: actions/checkout@v4
+
+      # 2️⃣ Terraform 설치
+      - name: 🔧 Terraform 설치
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      # 3️⃣ 초기화
+      - name: 📦 Terraform Init
+        run: terraform init
+
+      # 4️⃣ 포맷 검사
+      - name: 🔍 코드 포맷 검사
+        run: terraform fmt -check
+
+      # 5️⃣ 유효성 검사
+      - name: ✅ 코드 유효성 검사
+        run: terraform validate
+
+      # 6️⃣ Plan
+      - name: 📋 배포 미리보기 (Plan)
+        id: plan
+        run: terraform plan -no-color -parallelism=30
+        continue-on-error: true
+
+      # 7️⃣ PR에 plan 결과 댓글
+      - name: 💬 PR에 Plan 결과 댓글
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const output = `### 🚀 Terraform Plan 결과
+
+            \`\`\`
+            ${{ steps.plan.outputs.stdout }}
+            \`\`\`
+
+            > 📌 Merge하면 위 변경사항이 Azure에 자동 배포됩니다!`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
+
+      # 8️⃣ Apply (main push 시에만)
+      - name: 🚀 Azure에 배포! (Apply)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -parallelism=30
