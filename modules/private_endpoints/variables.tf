@@ -37,10 +37,11 @@ variable "postgresql_server_id" {
   type        = string
 }
 
-variable "ledger_id" {
-  description = "Confidential Ledger ID"
-  type        = string
-}
+# TODO: Korea Central 지원 시 아래 주석 해제 (main.tf:ledger_id 주석 해제와 함께)
+# variable "ledger_id" {
+#   description = "Confidential Ledger ID"
+#   type        = string
+# }
 
 variable "key_vault_id" {
   description = "Key Vault ID"

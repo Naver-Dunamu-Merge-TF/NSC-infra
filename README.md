@@ -20,15 +20,17 @@ flowchart LR
 
 | Phase | 담당 모듈 | 주요 배포 리소스 |
 |:---|:---|:---|
-| **Phase 1** | `network`, `routing`, `monitoring` | VNet, Subnets (10개), NSG (6개), UDR (3개), Log Analytics, App Insights |
-| **Phase 2** | `security`, `data`, `private_endpoints` | Key Vault, ACR, DNS Zones (7개), SQL DB, PostgreSQL, Ledger, PE (7개) |
+| **Phase 1** | `network`, `monitoring` | VNet, Subnets (10개), NSG (7개), Log Analytics, App Insights |
+| **Phase 2** | `security`, `data` | Key Vault, ACR, DNS Zones (7개), SQL DB, PostgreSQL, Ledger |
+| **Phase 2~4+** | `private_endpoints` | PE 6개 — **의존 리소스가 Phase 2·3·4에 걸쳐있어 Terraform 의존성 그래프가 자동 순서 결정** |
 | **Phase 3** | `compute`, `messaging`, `perimeter` | AKS, Event Hubs, AppGW, WAF, Bastion, Firewall, PIP (3개) |
-| **Phase 4** | `analytics`, `diagnostics` | Databricks, ADLS Gen2, Diagnostic Settings (5개) |
+| **Phase 3+** | `routing` | UDR (3개) — **perimeter 완료 후 실행** (firewall_private_ip 의존성) |
+| **Phase 4** | `analytics`, `diagnostics` | Databricks, ADLS Gen2, Diagnostic Settings (7개) |
 
 ### 💡 빌드 순서 지정 근거
 1. **network 먼저 배포**: 모든 상위 리소스가 서브넷(Subnet) 의존성을 가짐
 2. **monitoring 먼저 배포**: 각종 모니터링 에이전트와 Diagnostic Settings가 Log Analytics Workspace ID를 필요로 함
-3. **security / data → private_endpoints 배포**: Private Endpoint 생성을 위해서는 대상 리소스 ID, 서브넷 ID, 개인 DNS Zone ID가 동시에 필요함
+3. **private_endpoints는 Phase 2~4에 걸쳐 실행**: EventHubs(Phase 3)와 ADLS(Phase 4) PE는 해당 리소스가 완성된 후에야 연결 가능. Terraform이 의존성 그래프로 자동 순서 보장 (manual 순서 지정 불필요)
 4. **compute / perimeter 배포**: AKS 생성 시 ACR/KV의 RBAC 권한(Role Assignment)이 필요하며, Firewall의 경우 UDR nextHop IP 역전달 과정이 필요함
 5. **analytics / diagnostics 마지막 배포**: Databricks (VNet Injection용 서브넷/NSG 필요), Diagnostics (앞서 생성된 모든 리소스의 ID를 대상으로 등록해야 함)
 

@@ -3,11 +3,11 @@
 # =============================================================================
 
 output "aks_id" {
-  value = azurerm_kubernetes_cluster.main.id             # AKS Cluster ID
+  value = azurerm_kubernetes_cluster.main.id # AKS Cluster ID
 }
 
 output "aks_fqdn" {
-  value = azurerm_kubernetes_cluster.main.fqdn           # AKS API Server FQDN
+  value = azurerm_kubernetes_cluster.main.fqdn # AKS API Server FQDN
 }
 
 output "aks_identity_principal_id" {

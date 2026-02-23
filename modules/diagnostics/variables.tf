@@ -31,3 +31,13 @@ variable "sql_database_id" {
   description = "SQL Database ID"
   type        = string
 }
+
+variable "postgresql_server_id" {
+  description = "PostgreSQL Flexible Server ID"
+  type        = string
+}
+
+variable "eventhubs_namespace_id" {
+  description = "Event Hubs Namespace ID"
+  type        = string
+}

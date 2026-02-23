@@ -5,14 +5,14 @@
 
 # Event Hubs Namespace (§7.1: Standard, 2 TU, AutoInflate 10)
 resource "azurerm_eventhub_namespace" "main" {
-  name                     = "${var.project_prefix}-evh-${var.environment}"  # nsc-evh-dev
+  name                     = "${var.project_prefix}-evh-${var.environment}" # nsc-evh-dev
   resource_group_name      = var.resource_group_name
-  location                 = var.location                # Korea Central
-  sku                      = "Standard"                  # §7.1: Standard
-  capacity                 = 2                           # §7.1: 2 TU (Throughput Units)
+  location                 = var.location # Korea Central
+  sku                      = "Standard"   # §7.1: Standard
+  capacity                 = 2            # §7.1: 2 TU (Throughput Units)
   auto_inflate_enabled     = true
   maximum_throughput_units = 10
-  zone_redundant           = true                        # Zone Redundant
+  zone_redundant           = true # Zone Redundant
   tags                     = var.tags
 }
 

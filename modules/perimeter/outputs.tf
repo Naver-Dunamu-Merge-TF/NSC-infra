@@ -3,15 +3,15 @@
 # =============================================================================
 
 output "appgw_id" {
-  value = azurerm_application_gateway.main.id            # AppGW ID
+  value = azurerm_application_gateway.main.id # AppGW ID
 }
 
 output "bastion_id" {
-  value = azurerm_bastion_host.main.id                   # Bastion ID
+  value = azurerm_bastion_host.main.id # Bastion ID
 }
 
 output "firewall_id" {
-  value = azurerm_firewall.main.id                       # Firewall ID
+  value = azurerm_firewall.main.id # Firewall ID
 }
 
 output "firewall_private_ip" {
@@ -19,5 +19,5 @@ output "firewall_private_ip" {
 }
 
 output "firewall_public_ip" {
-  value = azurerm_public_ip.firewall.ip_address          # SNAT Public IP
+  value = azurerm_public_ip.firewall.ip_address # SNAT Public IP
 }

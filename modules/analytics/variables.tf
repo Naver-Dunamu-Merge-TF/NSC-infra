@@ -11,11 +11,11 @@ variable "location" {
 }
 
 variable "project_prefix" {
-  type = string                                         # nsc
+  type = string # nsc
 }
 
 variable "environment" {
-  type = string                                         # dev/stg/prod
+  type = string # dev/stg/prod
 }
 
 variable "suffix" {
@@ -35,7 +35,7 @@ variable "analytics_host_subnet_id" {
 
 variable "analytics_host_subnet_name" {
   description = "Databricks Host 서브넷 이름"
-  type        = string                                  # nsc-snet-analytics-host
+  type        = string # nsc-snet-analytics-host
 }
 
 variable "analytics_container_subnet_id" {
@@ -45,7 +45,7 @@ variable "analytics_container_subnet_id" {
 
 variable "analytics_container_subnet_name" {
   description = "Databricks Container 서브넷 이름"
-  type        = string                                  # nsc-snet-analytics-container
+  type        = string # nsc-snet-analytics-container
 }
 
 variable "tags" {

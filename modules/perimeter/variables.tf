@@ -11,11 +11,11 @@ variable "location" {
 }
 
 variable "project_prefix" {
-  type = string                                         # nsc
+  type = string # nsc
 }
 
 variable "environment" {
-  type = string                                         # dev/stg/prod
+  type = string # dev/stg/prod
 }
 
 variable "perimeter_subnet_id" {
@@ -25,27 +25,27 @@ variable "perimeter_subnet_id" {
 
 variable "bastion_subnet_id" {
   description = "Bastion 배치 서브넷"
-  type        = string                                  # AzureBastionSubnet ID
+  type        = string # AzureBastionSubnet ID
 }
 
 variable "egress_subnet_id" {
   description = "Firewall 배치 서브넷"
-  type        = string                                  # AzureFirewallSubnet ID
+  type        = string # AzureFirewallSubnet ID
 }
 
 variable "app_subnet_cidr" {
   description = "Application 서브넷 CIDR (Firewall 규칙 소스)"
-  type        = string                                  # 10.0.2.0/23
+  type        = string # 10.0.2.0/23
 }
 
 variable "analytics_subnet_cidr" {
   description = "Analytics 서브넷 CIDR (Firewall 규칙 소스)"
-  type        = string                                  # 10.0.6.0/23
+  type        = string # 10.0.6.0/23
 }
 
 variable "vnet_cidr" {
   description = "VNet 전체 CIDR (Network Rule 소스)"
-  type        = string                                  # 10.0.0.0/16
+  type        = string # 10.0.0.0/16
 }
 
 variable "tags" {

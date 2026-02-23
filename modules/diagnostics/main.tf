@@ -5,7 +5,7 @@
 # AKS Diagnostic Settings
 resource "azurerm_monitor_diagnostic_setting" "aks" {
   name                       = "diag-aks"
-  target_resource_id         = var.aks_id                # AKS Cluster
+  target_resource_id         = var.aks_id # AKS Cluster
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
   enabled_log { category = "kube-apiserver" }
@@ -60,6 +60,32 @@ resource "azurerm_monitor_diagnostic_setting" "sqldb" {
 
   enabled_log { category = "SQLSecurityAuditEvents" }
   enabled_log { category = "QueryStoreRuntimeStatistics" }
+
+  metric { category = "AllMetrics" }
+}
+
+# PostgreSQL Flexible Server Diagnostic Settings
+resource "azurerm_monitor_diagnostic_setting" "postgresql" {
+  name                       = "diag-postgresql"
+  target_resource_id         = var.postgresql_server_id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  enabled_log { category = "PostgreSQLLogs" }
+  enabled_log { category = "PostgreSQLFlexDatabaseXacts" }
+  enabled_log { category = "PostgreSQLFlexQueryStoreRuntime" }
+
+  metric { category = "AllMetrics" }
+}
+
+# Event Hubs Diagnostic Settings
+resource "azurerm_monitor_diagnostic_setting" "eventhubs" {
+  name                       = "diag-eventhubs"
+  target_resource_id         = var.eventhubs_namespace_id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  enabled_log { category = "ArchiveLogs" }
+  enabled_log { category = "OperationalLogs" }
+  enabled_log { category = "AutoScaleLogs" }
 
   metric { category = "AllMetrics" }
 }

@@ -11,11 +11,11 @@ variable "location" {
 }
 
 variable "project_prefix" {
-  type = string                                         # nsc
+  type = string # nsc
 }
 
 variable "environment" {
-  type = string                                         # dev/stg/prod
+  type = string # dev/stg/prod
 }
 
 variable "tags" {

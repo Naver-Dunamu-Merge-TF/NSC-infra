@@ -4,11 +4,11 @@
 # =============================================================================
 
 resource "azurerm_key_vault" "main" {
-  name                          = "${var.project_prefix}-kv-${var.environment}"   # nsc-kv-dev (§7.4)
+  name                          = "${var.project_prefix}-kv-${var.environment}" # nsc-kv-dev (§7.4)
   resource_group_name           = var.resource_group_name
-  location                      = var.location                 # Korea Central
+  location                      = var.location # Korea Central
   tenant_id                     = var.tenant_id
-  sku_name                      = "standard"                   # §7.1: Standard
+  sku_name                      = "standard" # §7.1: Standard
   soft_delete_retention_days    = 90
   purge_protection_enabled      = true
   enable_rbac_authorization     = true
@@ -18,20 +18,20 @@ resource "azurerm_key_vault" "main" {
 
 # Container Registry (§7.1: Premium, 500GB, Content Trust)
 resource "azurerm_container_registry" "main" {
-  name                          = "${var.project_prefix}acr${var.environment}${var.suffix}"  # nscacrdev3a7k
+  name                          = "${var.project_prefix}acr${var.environment}${var.suffix}" # nscacrdev3a7k
   resource_group_name           = var.resource_group_name
   location                      = var.location
   sku                           = "Premium"
   admin_enabled                 = false
   public_network_access_enabled = false
-  data_endpoint_enabled         = true                     # CKV_AZURE_166: dedicated data endpoint
+  data_endpoint_enabled         = true # CKV_AZURE_166: dedicated data endpoint
 
-  retention_policy {                                        # CKV_AZURE_164: image retention
+  retention_policy { # CKV_AZURE_164: image retention
     days    = 30
     enabled = true
   }
 
-  trust_policy {                                            # CKV_AZURE_163: content trust
+  trust_policy { # CKV_AZURE_163: content trust
     enabled = true
   }
 

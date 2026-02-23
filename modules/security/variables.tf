@@ -25,12 +25,12 @@ variable "suffix" {
 
 variable "tenant_id" {
   description = "Azure AD Tenant ID (Key Vault용)"
-  type        = string                                  # data.azurerm_client_config.current.tenant_id
+  type        = string # data.azurerm_client_config.current.tenant_id
 }
 
 variable "vnet_id" {
   description = "VNet ID (DNS Zone VNet Link용)"
-  type        = string                                  # module.network.vnet_id
+  type        = string # module.network.vnet_id
 }
 
 variable "tags" {

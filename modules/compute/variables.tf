@@ -11,21 +11,21 @@ variable "location" {
 }
 
 variable "project_prefix" {
-  type = string                                         # nsc
+  type = string # nsc
 }
 
 variable "environment" {
-  type = string                                         # dev/stg/prod
+  type = string # dev/stg/prod
 }
 
 variable "aks_subnet_id" {
   description = "AKS Node Pool 배치 서브넷"
-  type        = string                                  # module.network.subnet_ids["app"]
+  type        = string # module.network.subnet_ids["app"]
 }
 
 variable "log_analytics_workspace_id" {
   description = "OMS Agent용 LAW ID"
-  type        = string                                  # module.monitoring.law_id
+  type        = string # module.monitoring.law_id
 }
 
 variable "tags" {

@@ -5,12 +5,12 @@
 
 # SQL Server (§7.1: General Purpose, vCore 2, Zone Redundant)
 resource "azurerm_mssql_server" "main" {
-  name                          = "${var.project_prefix}-sql-${var.environment}"  # nsc-sql-dev
+  name                          = "${var.project_prefix}-sql-${var.environment}" # nsc-sql-dev
   resource_group_name           = var.resource_group_name
-  location                      = var.location                 # Korea Central
+  location                      = var.location # Korea Central
   version                       = "12.0"
-  minimum_tls_version           = "1.2"                        # §7.3: TLS 1.2
-  public_network_access_enabled = false                        # PE Only
+  minimum_tls_version           = "1.2" # §7.3: TLS 1.2
+  public_network_access_enabled = false # PE Only
 
   azuread_administrator {
     login_username              = "nsc-sql-admin"
@@ -31,7 +31,7 @@ resource "azurerm_mssql_database" "main" {
   zone_redundant                      = true
   storage_account_type                = "Zone"
   transparent_data_encryption_enabled = true
-  ledger_enabled                      = true               # CKV_AZURE_229: immutable audit trail
+  ledger_enabled                      = true # CKV_AZURE_229: immutable audit trail
 
   short_term_retention_policy {
     retention_days = 7
@@ -42,14 +42,14 @@ resource "azurerm_mssql_database" "main" {
 
 # PostgreSQL Flexible Server (§7.1: Burstable B1ms, 32GB)
 resource "azurerm_postgresql_flexible_server" "main" {
-  name                   = "${var.project_prefix}-pg-${var.environment}"  # nsc-pg-dev
+  name                   = "${var.project_prefix}-pg-${var.environment}" # nsc-pg-dev
   resource_group_name    = var.resource_group_name
   location               = var.location
-  version                = "14"                                # PG 14
+  version                = "14" # PG 14
   administrator_login    = "nscpgadmin"
   administrator_password = var.pg_admin_password
-  sku_name               = "B_Standard_B1ms"                   # Burstable B1ms
-  storage_mb             = 32768                               # 32GB
+  sku_name               = "B_Standard_B1ms" # Burstable B1ms
+  storage_mb             = 32768             # 32GB
 
   authentication {
     active_directory_auth_enabled = true
@@ -66,10 +66,10 @@ resource "azurerm_postgresql_flexible_server" "main" {
 
 # Confidential Ledger (§7.1: Standard, Append-Only)
 resource "azurerm_confidential_ledger" "main" {
-  name                = "${var.project_prefix}-cl-${var.environment}"  # nsc-cl-dev
+  name                = "${var.project_prefix}-cl-${var.environment}" # nsc-cl-dev
   resource_group_name = var.resource_group_name
-  location            = "southeastasia"                    # Korea Central 미지원 → 최근접 리전
-  ledger_type         = "Public"                               # Public Ledger
+  location            = "southeastasia" # Korea Central 미지원 → 최근접 리전
+  ledger_type         = "Public"        # Public Ledger
 
   azuread_based_service_principal {
     principal_id     = var.current_object_id

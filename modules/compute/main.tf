@@ -5,14 +5,14 @@
 
 # AKS Cluster (§7.1: Standard, D4s_v3 × 3, AutoScale 3-10)
 resource "azurerm_kubernetes_cluster" "main" {
-  name                = "${var.project_prefix}-aks-${var.environment}"  # nsc-aks-dev
-  resource_group_name = var.resource_group_name
-  location            = var.location                      # Korea Central
-  dns_prefix          = "${var.project_prefix}-aks-${var.environment}"
-  kubernetes_version        = "1.32"                    # 1.28~1.31은 LTS 전용 → 1.32+ Standard tier 지원
-  private_cluster_enabled   = true                        # CKV_AZURE_115: private cluster
-  automatic_channel_upgrade = "stable"                    # CKV_AZURE_171: auto upgrade channel
-  sku_tier                  = "Standard"                  # CKV_AZURE_170: Paid SLA
+  name                         = "${var.project_prefix}-aks-${var.environment}" # nsc-aks-dev
+  resource_group_name          = var.resource_group_name
+  location                     = var.location # Korea Central
+  dns_prefix                   = "${var.project_prefix}-aks-${var.environment}"
+  kubernetes_version           = "1.32"     # 1.28~1.31은 LTS 전용 → 1.32+ Standard tier 지원
+  private_cluster_enabled      = true       # CKV_AZURE_115: private cluster
+  automatic_channel_upgrade    = "stable"   # CKV_AZURE_171: auto upgrade channel
+  sku_tier                     = "Standard" # CKV_AZURE_170: Paid SLA
   image_cleaner_enabled        = true
   image_cleaner_interval_hours = 48
 
@@ -21,7 +21,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   default_node_pool {
     name                = "system"
     vm_size             = "Standard_D4s_v3"
-    type                = "VirtualMachineScaleSets"        # CKV_AZURE_169: scale sets
+    type                = "VirtualMachineScaleSets" # CKV_AZURE_169: scale sets
     node_count          = 3
     min_count           = 3
     max_count           = 10
@@ -31,13 +31,13 @@ resource "azurerm_kubernetes_cluster" "main" {
   }
 
   identity {
-    type = "SystemAssigned"                               # §5.1: Managed Identity
+    type = "SystemAssigned" # §5.1: Managed Identity
   }
 
   oidc_issuer_enabled       = true
-  workload_identity_enabled = true                        # CKV_AZURE_172: Workload Identity
-  local_account_disabled    = false                       # 안정화 후 true 전환 (Deploy_TEST_LOG #9)
-  azure_policy_enabled      = true                        # CKV_AZURE_116: Azure Policy addon
+  workload_identity_enabled = true  # CKV_AZURE_172: Workload Identity
+  local_account_disabled    = false # 안정화 후 true 전환 (Deploy_TEST_LOG #9)
+  azure_policy_enabled      = true  # CKV_AZURE_116: Azure Policy addon
 
   azure_active_directory_role_based_access_control {
     managed            = true
@@ -55,7 +55,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     log_analytics_workspace_id = var.log_analytics_workspace_id
   }
 
-  key_vault_secrets_provider {                             # CKV_AZURE_171: KV Secrets Provider
+  key_vault_secrets_provider { # CKV_AZURE_171: KV Secrets Provider
     secret_rotation_enabled = true
   }
 
